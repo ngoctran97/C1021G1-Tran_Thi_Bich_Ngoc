@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <h2>Market Research Survey</h2>
+    <p>Please take a few moments to complete this satisfaction survey.</p>
+    <hr>
+    What is your age range?<br>
+    <select name="age">
+        <option >18-24</option>
+        <option >25-34</option>
+        <option >35-50</option>
+        <option >50+</option>
+    </select><br>
+    <br>
+    What is your yearly income range?<br>
+    <select name="income">
+        <option >$0-$25,000</option>
+        <option >$25,000-$50,000</option>
+        <option >$50,000-$100,000</option>
+        <option >$100,000+</option>
+    </select><br>
+    <br>
+    Gender Identity<br>
+    <label><input name="Gender" value="Male" type="radio" /> Male</label> <br/>
+    <label><input name="Gender" value="Female" type="radio"/> Female</label> <br/>
+    <br>
+    Which of the following products have your purchased in the last 2 months. Please check all that apply.<br/>
+    <label><input name="products" value="Product 1" type="checkbox"/>Product 1</label> <br/>
+    <label><input name="products" value="Product 1" type="checkbox"/>Product 2</label> <br/>
+    <label><input name="products" value="Product 1" type="checkbox"/>Product 3</label> <br/>
+    <br>
+    How often would you use our new product?<br/>
+    <label><input name="use" value="Daily<" type="radio" /> Daily</label> <br/>
+    <label><input name="use" value="Weekly" type="radio"/> Weekly</label> <br/>
+    <label><input name="use" value="Monthly" type="radio"/> Monthly</label> <br/>
+    <br>
+    What would you pay for the new product?<br>
+    $
+    <input type = "text" name="phone1" size="5"/> .
+    <input type = "text" name="phone2" size="5"/><br>
+    <br>
+    What features would you like to see in the new product.<br>
+    <textarea name="features" cols="150" rows="10"></textarea><br>
+    <br>
+    Please rate your level of agreement with the following statements.<br>
+    <table border="1">
+        <tr>
+            <th></th>
+            <th>Strongly Disagree</th>
+            <th>Disagree</th>
+            <th>Agree</th>
+            <th>Strongly Agree</th>
+        <tr/>
+        <tr>
+            <td>Our products sre priced fairlu.</td>
+            <td> <label><input value="1" type="radio" /><br>1</label></td>
+            <td> <label><input value="2" type="radio" /><br>2</label></td>
+            <td> <label><input value="3" type="radio" /><br>3</label></td>
+            <td> <label><input value="4" type="radio" /><br>4</label></td>
+        </tr>
+        <tr>
+            <td>Our products sre higt quality.</td>
+            <td> <label><input value="1" type="radio" /><br>1</label></td>
+            <td> <label><input value="2" type="radio" /><br>2</label></td>
+            <td> <label><input value="3" type="radio" /><br>3</label></td>
+            <td> <label><input value="4" type="radio" /><br>4</label></td>
+        </tr>
+        <tr>
+            <td>You would recommend our product to a friend or coworker.</td>
+            <td> <label><input value="1" type="radio" /><br>1</label></td>
+            <td> <label><input value="2" type="radio" /><br>2</label></td>
+            <td> <label><input value="3" type="radio" /><br>3</label></td>
+            <td> <label><input value="4" type="radio" /><br>4</label></td>
+        </tr>
+    </table><br>
+    <input type="submit" name="sumit">
+
+</form>
+
+</body>
+</html>
