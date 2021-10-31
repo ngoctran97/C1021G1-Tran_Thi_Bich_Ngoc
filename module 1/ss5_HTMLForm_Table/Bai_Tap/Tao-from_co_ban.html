@@ -2,10 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>tạo form đơn giản</title>
+    <link rel="stylesheet" href="from.css">
 </head>
 <body>
-<div
+<!--//tạo một form với các trường-->
+<form>
+    <h2>Sở thích của bạn</h2>
+    Họ và tên
+    <input type = "text" name="yourname" size="35"/><br/>
+    <br/>
+    Email
+    <input type = "text" name="Email" size="35"/><br/>
+    <br/>
+    Sở thích
+    <label><input name="products" value="sport" type="checkbox"/>Thể thao</label>
+    <label><input name="products" value="music" type="checkbox"/>Âm nhạc</label>
+    <label><input name="products" value="reading books" type="checkbox"/>Đọc sách</label> <br/>
+    <label><input name="products" value="surf the web" type="checkbox"/>Lướt wed</label>
+    <label><input name="products" value="gaming" type="checkbox"/>Chơi game</label>
+    <label><input name="products" value="film" type="checkbox"/>Điện ảnh</label> <br/>
+    <label><input name="products" value="travel" type="checkbox"/>Du lịch</label> <br/>
+    <input type="submit" value="Gủi thông tin"/>
+    <input type="reset" value="nhập lại"/>
+</form>
+<hr>
+<!--Tạo một form đăng ký học viên với cấu trúc-->
+<h3> Đăng ký học viên</h3>
+<form>
+    Họ và tên
+    <input type = "text" name="yourname" size="35"/><br/>
+    <br/>
+    Ngày sinh
+    <input type = "text" name="birthday" size="35"/><br/>
+    <br/>
+    Giới tính
+    <input name="Gender" value="gender" type="radio" /> Nam</label>
+    <input name="Gender" value="gender" type="radio"/> Nữ</label> <br/>
+    <br/>
+    Địa chỉ
+    <textarea name="features" cols="50" rows="5"></textarea><br>
+    <br/>
+    Lớp
+    <select name="class">
+        <option >--chọn lớp--</option>
+        <option >C0921G1/option>
+        <option >C1021G1</option>
+        <option >C1121G1</option>
+    </select><br>
+    <br/>
+    Email
+    <input type = "text" name="Email" size="35"/><br/>
+    <br/>
+    Điện thoại
+    <input type = "text" name="Phone" size="35"/><br/>
+    <br/>
+    <input type="submit" value="Gủi thông tin"/>
+    <input type="reset" value="nhập lại"/>
 
+</form>
 </body>
 </html>
