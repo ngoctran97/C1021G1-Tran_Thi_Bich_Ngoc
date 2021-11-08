@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nha = ["trieu", "hoa", "ngoc","hoang"];
+
+    nha.push("sky");//them 1 phan tu vao cuoi mang
+    document.writeln(nha+"<br>"); //trieu,hoa,ngoc,hoang,sky
+
+    nha.unshift("xiu");// them 1 phan tu vao dau mang
+    document.writeln(nha+"<br>"); //xiu,trieu,hoa,ngoc,hoang,sky
+
+    nha.pop(); // xoa 1 phan tu o cuoi mang
+    document.writeln(nha+"<br>"); //xiu,trieu,hoa,ngoc,hoang
+
+    nha.shift(); // 1 phan tu o dau mang
+    document.writeln(nha+"<br>");// trieu,hoa,ngoc,hoang
+
+    nha.sort(); // sap xep teo thu tu a- z
+    document.writeln(nha+"<br>"); // hoa,hoang,ngoc,trieu
+
+    nha.reverse(); // doa nguoc mang
+    document.writeln(nha+"<br>");//trieu,ngoc,hoang,hoa
+
+
+
+</script>
+
+</body>
+</html>
