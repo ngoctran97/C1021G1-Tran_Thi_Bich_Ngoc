@@ -7,24 +7,25 @@
 <body>
 <script>
 
-    function kiemTraKyTu(){
+    function kiemTraKyTu(a,b){
         let dem = 0;
-        for (let i = 0; 1 < a.length; i++){
+        for (let i = 0; i < a.length; i++){
             if (b === a[i]){
                 dem++;
             }
-            // alert("ky tu "+ b +"xuat hien trong mang a"+ dem + "lan");
         }
         if (dem === 0){
-             -1;
+             return -1;
         } else {
-            return count;
+            return dem;
         }
+
     }
 
-    let a = [1,2,3,4,5,6,7,8,9,10,5];
-    let b = prompt("nhap so kiem tra");
-    kiemTraKyTu(a,b);
+    let mang = [1,2,3,4,5,6,7,8,9,10,5];
+    let so = parseInt(prompt("nhap so kiem tra"));
+    kq = kiemTraKyTu(mang,so);
+    alert("ky tu "+ b +"xuat hien trong mang a"+ kq + "lan");
 </script>
 
 </body>

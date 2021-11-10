@@ -6,11 +6,18 @@
 </head>
 <body>
 <script>
-    function is_numeric(str){
-        return /^\d+$/.test(str);
+    let a = parseInt(prompt("nhap chuoi can kiem tra"));
+    if( !isNaN(a)) {
+        alert("la so");
     }
-    let str = prompt("nhap ky tu de kiem tra");
-    is_numeric(str);
+    else {
+        alert("la chuoi")
+    }
+    // function is_numeric(str){
+    //     return /^\d+$/.test(str);
+    // }
+    // let str = prompt("nhap ky tu de kiem tra");
+    // is_numeric(str);
 </script>
 
 </body>
