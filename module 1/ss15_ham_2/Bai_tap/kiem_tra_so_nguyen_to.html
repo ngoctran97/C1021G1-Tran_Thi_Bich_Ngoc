@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    function kTSoNguyento(num) {
+        //let flag = true;
+        if (num > 2) {
+            for (let i = 2; i < num; i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+
+        } else {
+            return false;
+        }
+    }
+    let so = parseInt(prompt("nhap so kiem tra"));
+    alert(kTSoNguyento(so));
+
+</script>
+
 </body>
 </html>

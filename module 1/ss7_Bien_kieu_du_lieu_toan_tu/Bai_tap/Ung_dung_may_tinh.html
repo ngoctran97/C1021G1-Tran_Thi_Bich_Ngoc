@@ -1,10 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<form>
+    <h1>Caculator</h1>
+    <input type="text" id="dauvao1" size="15">
+    <input type="text" id="dauvao2" size="15"><br>
+    <br>
+    <input type =”button” onclick="cong()" value="Addition(+)">
+    <input type =”button” onclick="tru()" value="Subtraction(-)">
+    <input type =”button” onclick="nhan()" value="Multiplication(X)">
+    <input type =”button” onclick="chia()" value="Divion(/)">
+</form>
+<script>
+    function cong() {
+        let a= parseInt(document.getElementById("dauvao1").value);
+        let b = parseInt(document.getElementById("dauvao2").value);
+        alert("tổng 2 số la : " + (a + b));
+    }
+    function tru() {
+        let a= parseInt(document.getElementById("dauvao1").value);
+        let b = parseInt(document.getElementById("dauvao2").value);
+        alert("hiệu 2 số là : " + (a - b));
+    }
+    function nhan() {
+        let a= parseInt(document.getElementById("dauvao1").value);
+        let b = parseInt(document.getElementById("dauvao2").value);
+        alert("tích 2 số là : " + (a * b));
+    }
+    function chia(){
+        let a = parseInt(document.getElementById("dauvao1").value);
+        let b = parseInt(document.getElementById("dauvao2").value);
+        alert("thuong 2 so la : " + (a / b ))
+    }
+
+
+
+</script>
+
 </body>
 </html>

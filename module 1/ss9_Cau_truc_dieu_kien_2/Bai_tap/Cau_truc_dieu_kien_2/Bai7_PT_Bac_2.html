@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    // PT bậc 2 ax2 + bx + c = 0
+    //detal = b2 - 4ac
+    // if detal < 0 => PT vô nghiệm
+    // if  detal = 0 => x1 = x1 = -b/2a
+    // if detal > 0 x1 = ((-b)+Math.sqrt(detal))/2a
+    //              x2 = ((-b)-Math.sqrt(detal))/2a
+    let a = parseInt(prompt("nhap gia tri a"));
+    let b = parseInt(prompt("nhap gia tri b"));
+    let c = parseInt(prompt("nhap gia tri c"));
+    let detal = (b*b) - (4*a*c);
+    if(detal < 0 ){
+        document.writeln("phương trình vô nghiệm");
+    }else if(detal == 0){
+        document.writeln("Phương trình có 2 nghiệm x1 = x2 = " + -b/2*a );
+    }else {
+        document.writeln("phương trình có 2 nhiệm x1 = " + ((-b)+Math.sqrt(detal))/2*a +
+            " và x2 = "+ ((-b)-Math.sqrt(detal))/2*a );
+    }
+
+</script>
+
 </body>
 </html>

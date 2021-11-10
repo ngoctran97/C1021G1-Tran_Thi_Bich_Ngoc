@@ -1,10 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <table>
+        <p id="test"></p>
+    <tr>
+        <td colspan="4"><input type="text" id="dauvao" size="20" ></td>
+    </tr>
+    <tr>
+        <tr><th><input type="button" value="yes" size="5" id="yes"></th></tr>
+        <th><input type =”button” onclick="tinh(this.value)" value="1" size="3"></th>
+        <th><input type =”button” onclick="tinh(this.value)" value="2" size="3"></th>
+        <th><input type =”button” onclick="tinh(this.value)" value="3" size="3"></th>
+        <th><input type =”button” onclick="tinh(this.value)" value="+" size="3"></th>
+    </tr>
+    <tr>
+        <td><input type =”button” onclick="tinh(this.value)" value="4" size="3"></td>
+        <td><input type =”button” onclick="tinh(this.value)" value="5" size="3"></td>
+        <td><input type =”button” onclick="tinh(this.value)" value="6" size="3"></td>
+        <td><input type =”button” onclick="tinh(this.value)" value="-" size="3"></td>
+    </tr>
+    <tr>
+        <td><input type =”button” onclick="tinh(this.value)" value="7" size="3"></td>
+        <td><input type =”button” onclick="tinh(this.value)" value="8" size="3"></td>
+        <td><input type =”button” onclick="tinh(this.value)" value="9" size="3"></td>
+        <td><button type =”button” onclick="tinh(this.value)" value="*" size="3">X</button></td>
+    </tr>
+    <tr>
+        <td><input type =”button” onclick="xoa()" value="C" size="3"></td>
+        <td><input type =”button” onclick="tinh(this.value)" value="0" size="3"></td>
+        <td><input type =”button” onclick="tinhketqua()" value="=" size="3"></td>
+        <td><input type =”button” onclick="tinh(this.value)" value="/" size="3"></td>
+    </tr>
+    </table>
+<script>
+    function tinh(so){
+        document.getElementById("dauvao").value +=so;
+    }
+    function tinhketqua(){
+        let bieuThuc=document.getElementById("dauvao").value;
+        // hàm eval() đùng để thực hiện tính 1 giá trị 1 biểu thức
+        document.getElementById("dauvao").value= eval(bieuThuc);
+    }
+    function xoa() {
+        document.getElementById("dauvao").value="";
+
+    }
+</script>
+
+
 </body>
 </html>

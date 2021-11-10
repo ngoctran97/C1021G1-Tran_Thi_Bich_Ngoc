@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+  function doiCho(a,b){
+      document.writeln("trước khi đôi chỗ a = "+ a+"<br/>");
+      document.writeln("trước khi đôi chỗ b = "+ b+"<br/>");
+      c = a;
+      a = b;
+      b = c;
+      document.writeln("sau khi đôi chỗ a = "+ a +"<br/>");
+      document.writeln("sau khi đôi chỗ b = "+ b +"<ba/>");
+  }
+  let a = prompt("nhap so a");
+  let b = prompt("nhap so b");
+  let c = [];
+  doiCho(a,b);
+</script>
+
 </body>
 </html>

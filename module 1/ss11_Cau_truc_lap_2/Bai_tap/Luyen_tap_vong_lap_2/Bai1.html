@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let a = prompt("bạn muônd in bao nhiêu số trong dãy pibonacci");
+    let num1 = 1;
+    let num2 = 1;
+    document.writeln(num1, num2)
+    for (let i= 0; i< a-2; i++){
+        let num = num1 + num2;
+        document.writeln(num);
+        num1= num2;
+        num2 = num;
+    }
+</script>
+
 </body>
 </html>

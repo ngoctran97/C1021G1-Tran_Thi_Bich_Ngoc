@@ -2,9 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Title</title>
 </head>
 <body>
-$END$
+
+
+<h2>JavaScript Functions</h2>
+
+<p>Trong phần này, chúng ta sẽ phát triển một ứng dụng cho phép hiển thị 20 số nguyên tố đầu tiên.</p>
+
+<p id="demo"></p>
+<p id="xiu"></p>
+<script>
+  let numbers = 20;
+  let count = 0;
+  let N = 2;
+  while(count < numbers) {
+    if(kiemTraSoNguyen(N) === true) {
+      document.getElementById("demo").innerHTML += " " + N;
+      count++;
+    }
+    N++;
+  }
+
+  function kiemTraSoNguyen(N) {
+    document.getElementById("xiu").innerHTML += "kiem tra : " + N + "<br>";
+    let canBacHai = Math.sqrt(N);
+    for(let i = 2; i <= canBacHai; i++) {
+      if(N % i == 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+</script>
+
+
 </body>
 </html>

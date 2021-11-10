@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Tính thuế thu nhập cà nhân</title>
 </head>
 <body>
-$END$
+<script>
+    let luong = parseInt(prompt("nhap tien luong"));
+    if ( luong <= 5){
+        alert("tiền thuế tháng này phải nộp là : " + luong * 0.05 + "triệu");
+    }else if ( luong <= 10){
+        alert("tiền thuế tháng này phải nộp là : " + luong * 0.1+ "triệu");
+    }else if ( luong <= 18){
+        alert("tiền thuế tháng này phải nộp là : " + luong * 0.15+ "triệu");
+    }else if ( luong <= 32){
+        alert("tiền thuế tháng này phải nộp là : " + luong * 0.2+ "triệu");
+    }else if ( luong <= 52){
+        alert("tiền thuế tháng này phải nộp là : " + luong * 0.25+ "triệu");
+    }else if ( luong <= 80){
+        alert("tiền thuế tháng này phải nộp là : " + luong * 0.3+ "triệu");
+    }else {
+        alert("tiền thuế tháng này phải nộp là : " + luong * 0.35+ "triệu");
+    }
+
+</script>
+
 </body>
 </html>

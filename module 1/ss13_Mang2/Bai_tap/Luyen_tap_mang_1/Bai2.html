@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let a = [1,4,66,77,54,12,5,90,8,10];
+    let max = a[0];
+    let index = 0;
+    for (let i = 0; i < a.length ; i++) {
+        if ( a[i]> max){
+            max = a[i];
+            index = i;
+        }
+    }
+    document.write("số lớn nhất trong mảng là :"+ max+"<br>");
+     let viTri = a.indexOf(max);
+     document.write("Vị trí của số lơn nhat là : "+viTri);
+</script>
+
 </body>
 </html>

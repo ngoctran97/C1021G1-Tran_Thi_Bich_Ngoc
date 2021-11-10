@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let num1 = 1;
+    let num2 = 1;
+    while (true){
+        let num = num1+ num2;
+        if(num % 5==0){
+            document.writeln("số đầu tiên trong dãy pibonacci la:"+ num);
+            break;
+        }
+        num1 = num2;
+        num2 = num;
+
+    }
+
+
+</script>
+
 </body>
 </html>

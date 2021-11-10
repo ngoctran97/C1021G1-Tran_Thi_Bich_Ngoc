@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let num = 10;
+    let array = [];
+    let flag = false;
+    let v = prompt("nhap v") ;
+    for (let i = 0; i < 10; i++){
+         b =parseInt(prompt("nhap so thu "+ i ));
+         array.push(b);
+    }
+    for ( let i =0; i < array.length; i++) {
+        if ( v === array[i]){
+            flag = true;
+        }
+    }
+    if(flag=true){
+        alert("V is in the array");
+    }else{
+        alert("V is no in the array");
+    }
+
+</script>
+
 </body>
 </html>

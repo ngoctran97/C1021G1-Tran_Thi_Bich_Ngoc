@@ -1,10 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let num = parseInt(prompt("nhap so phan tu trong mang"));
+    let xiu = [];
+    for ( let i = 0; i < num; i++){
+        b = parseInt(prompt("nhap so thứ "+ i+"<br>"));
+        xiu.push(b);
+    }
+    //document.writeln(xiu);
+    let max = xiu[0];
+    let sum = 0;
+    let avg = 0;
+    for (let i= 0; i < xiu.length; i++){
+        sum += xiu[i];
+       if( xiu[i]> max){
+           max = xiu[i];
+           avg = sum/xiu.length;
+       }
+    }
+    document.write("trung binh cac so trong mang la"+ avg+"<br>");
+    document.write("so lown nhat trong mang la: "+ max);
+
+
+</script>
 </body>
 </html>

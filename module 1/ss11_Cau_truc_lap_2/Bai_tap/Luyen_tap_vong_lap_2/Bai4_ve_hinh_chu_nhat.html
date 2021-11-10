@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let m = prompt("chieu rong");
+    let n = prompt("chieu dai");
+    for (let i = 1 ; i <= m ; i++){
+        for (let j = 1 ; j <= n ; j++){
+            if (i == 1 || i ==m  || j==1 || j==n){
+                document.write("*");
+            }else {
+                document.write("&nbsp&nbsp");
+            }
+        }
+        document.write("</br>");
+    }
+
+</script>
+
 </body>
 </html>

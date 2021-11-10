@@ -1,10 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Tính lãi suất ngân hàng</title>
 </head>
 <body>
-$END$
+    <label>Số tiền gửi tiết kiệm: </label>
+        <input id="money" type="text" placeholder="Nhập số tiền gửi tiết kiệm">
+    <br>
+    <br>
+<label>Kỳ hạn vay: </label>
+<input id="time" type="text" placeholder="Nhập số tháng gửi tiết kiệm">
+<br>
+<br>
+<label>Lãi suất: </label>
+<input id="interest" type="text" placeholder="Nhập lãi suất: ">
+<br>
+<br>
+<input type="submit" value="Tính Lãi Suất" onclick="final()">
+<h2 id="value1"></h2>
+<h2 id="value2"></h2>
+<h2 id="value3"></h2>
+<h2 id="value4"></h2>
+
+<script>
+    function final() {
+        let tienVay = parseFloat(document.getElementById('money').value);
+        let laiSuat = parseFloat(document.getElementById('interest').value);
+        let kyHanVay = parseFloat(document.getElementById('time').value);
+        for (let i=1;i<=kyHanVay;i++) {
+            let tienLai = parseFloat(tienVay * (laiSuat/100));
+            tienVay += tienLai;
+        }
+        document.getElementById('value1').innerText = 'Tổng số tiền gốc + lãi phải trả là: ' + tienVay.toLocaleString() + ' VND';
+    }
+</script>
 </body>
 </html>

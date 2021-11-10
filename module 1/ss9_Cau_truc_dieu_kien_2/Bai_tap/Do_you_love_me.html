@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<div style="text-align: center">
+<h2>Do you love me ?</h2>
+<input type="button" onclick="yes()" value="yes"  id="yes" style="top:100px;left: 100px; position: relative">
+<input type="button" onmouseover="no()" value="no" id="no" style="position: relative; top:100px;left: 100px ">
+<h1 id="result"></h1>
+<script>
+function yes(){
+    document.getElementById("result").innerText="<3";
+}
+function no(){
+    let randomHeight = Math.random()* window.innerHeight;
+    let randomWidth = Math.random()* window.innerWidth;
+    document.getElementById("no").style.top = randomHeight + "px";
+    document.getElementById("no").style.left = randomWidth + "px";
+}
+</script>
 </body>
 </html>

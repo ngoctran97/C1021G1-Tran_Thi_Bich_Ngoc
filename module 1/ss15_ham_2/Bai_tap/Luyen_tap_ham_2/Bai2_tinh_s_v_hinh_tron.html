@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let r = parseInt(prompt("nhap ban kinh hinh tron"));
+    hinhTron(r);
+
+    function hinhTron (r){
+        s = Math.PI*r*r;
+        v = Math.PI*(r*2);
+        alert("Diện tích hinh tron la: "+s);
+        alert("Chu vi hình tròn là: "+v);
+    }
+</script>
+
 </body>
 </html>

@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let kiemTra = prompt("nhap tu can kiem tra");
+    let english = ["dog","cat","rabbit","bee"];
+    let tiengViet = ["chó","mèo","thỏ","ong"];
+    let hienThi = [];
+    let flag = false;
+    for (let i = 0; i < english.length; i++){
+        if(kiemTra === english[i]){
+            flag = true;
+            hienThi.push(tiengViet[i]);
+            document.write(kiemTra + " có nghĩa là: " + hienThi);
+            break;
+        }
+    }
+    if (!flag) {
+        document.write('Không tìm thấy trong từ điển');
+    }
+
+
+</script>
+
 </body>
 </html>

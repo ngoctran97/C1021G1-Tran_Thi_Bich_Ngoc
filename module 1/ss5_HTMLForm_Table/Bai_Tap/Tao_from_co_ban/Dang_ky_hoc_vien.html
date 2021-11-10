@@ -1,10 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<!--Tạo một form đăng ký học viên với cấu trúc-->
+
+<form>
+    <table style="background-color: darkkhaki;text-align: center; width: 100% ">
+    <h3 style=" color: red;background-color: aqua "> Đăng ký học viên</h3><br>
+    Họ và tên
+    <input type = "text" name="yourname" size="35"/><br/>
+    <br/>
+    Ngày sinh
+    <input type = "text" name="birthday" size="35"/><br/>
+    <br/>
+    Giới tính
+    <input name="Gender" value="gender" type="radio" /> Nam</label>
+    <input name="Gender" value="gender" type="radio"/> Nữ</label> <br/>
+    <br/>
+    Địa chỉ
+    <textarea name="features" cols="50" rows="5"></textarea><br>
+    <br/>
+    Lớp
+    <select name="class">
+        <option >--chọn lớp--</option>
+        <option >C0921G1/option>
+        <option >C1021G1</option>
+        <option >C1121G1</option>
+    </select><br>
+    <br/>
+    Email
+    <input type = "text" name="Email" size="35"/><br/>
+    <br/>
+    Điện thoại
+    <input type = "text" name="Phone" size="35"/><br/>
+    <br/>
+    <input type="submit" value="Gủi thông tin"/>
+    <input type="reset" value="nhập lại"/>
+    </table>
+</form>
+
 </body>
 </html>

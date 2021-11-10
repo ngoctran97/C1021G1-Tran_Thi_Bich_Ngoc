@@ -1,10 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<button onclick="myFunction()">Run</button>
+
+<p id="demo"></p>
+
+<script>
+    var str = 'hello freetuts, hello all member, hello student and hello everybody';
+    document.getElementById("demo").innerHTML = str;
+    function myFunction() {
+        var content = str.replace(/hello/g, 'hi');
+        document.getElementById("demo").innerHTML = content;
+    }
+
+
+  //let a = "xiu-koi-xinh-dep";
+  // for (let i=0; i<a.length; i++) {
+  //     a = a.replace('-', '_');
+  //     document.writeln(a);
+  // }
+  // for( let i =0; i < a.length; i++){
+  //     if(a[i] === "-"){
+  //         a.splice(i,1);
+  //         a
+  //     }
+  // }
+
+</script>
+
 </body>
 </html>

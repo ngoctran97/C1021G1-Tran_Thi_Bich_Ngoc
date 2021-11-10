@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let cuoc = parseInt(prompt("cước cố định"));
+    let phut =parseInt(prompt("số phút gọi"));
+    let tong = (cuoc (phut * 2000));
+    let tong1 = (cuoc (phut * 1500));
+    if (phut <=100) {
+        document.getElementById("string").innerText="Cước điện thoại là :" + tong;
+    }else {
+        document.getElementById("string").innerText="cước điện thoại là :" + tong1;
+    }
+</script>
+
 </body>
 </html>

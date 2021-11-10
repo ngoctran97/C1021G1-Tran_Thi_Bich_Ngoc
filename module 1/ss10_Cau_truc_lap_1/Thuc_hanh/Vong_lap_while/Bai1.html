@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let num = parseInt(prompt("Enter a number: "));
+    alert(num);
+    let total = num;
+    while( num != -1 ) {
+        num = parseInt(prompt("Enter a number: "));
+        alert(num);
+        total += num;
+    }
+    document.writeln("tong cac so da nhap la : " + total);
+
+
+</script>
 </body>
 </html>

@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let x = [2,7,0,6,1,9,9,7];
+    let first = 0;
+    let last = x.length -1;
+    while (first < last){
+        let b = x[first];
+        x[first] = x[last];
+        x[last] = b;
+        first++;
+        last--;
+    }
+    document.writeln(x);
+    // x.reverse();
+    // document.writeln(x);
+</script>
+
 </body>
 </html>

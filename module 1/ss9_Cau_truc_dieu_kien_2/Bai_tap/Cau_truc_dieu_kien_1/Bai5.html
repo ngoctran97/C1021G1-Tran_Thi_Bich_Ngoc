@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let kiemtra = parseInt(prompt("Nhập điểm kiểm tra"));
+    let giuaky = parseInt(prompt("Nhập điểm giũa kỳ"));
+    let cuoiky = parseInt(prompt("Nhập điểm cuối kỳ"));
+    let average = (kiemtra+ (giuaky*2)+(cuoiky*3))/6;
+    if( average >= 8 ){
+        document.writeln("Học sinh giỏi");
+    }else if ( average >=6.5){
+        document.writeln("Học sinh khá");
+    }else if ( average >=5){
+        document.writeln("Học sinh trung bình");
+    }else if ( average >=3.5){
+        document.writeln("Học sinh yếu");
+    }else
+        document.writeln("Học sinh kém ");
+
+
+</script>
+
 </body>
 </html>

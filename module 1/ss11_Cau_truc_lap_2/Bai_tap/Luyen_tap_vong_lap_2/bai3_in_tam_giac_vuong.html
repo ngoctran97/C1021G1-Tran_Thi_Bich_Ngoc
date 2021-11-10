@@ -1,10 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let row = 5;
+    let col = 5;
+    for (let i=1;i<=row;i++){
+        //côt
+        for (let j=1;j<=i;j++){
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+    // hinh 1 cach 2
+    // for ( let i= 6; i >0; i--){
+    //     for ( let j = 6; j > i;j--){
+    //         document.write("*");
+    //     }
+    //     document.write("<br>");
+    // }
+
+
+    //3. hinh tam giac 2
+    for (let i=1;i<=row;i++){
+        //côt
+        for (let j=1;j<=(col-i);j++){
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+
+    //4. hinh tam giac 3
+    for (let i=1;i<=row;i++){
+        //côt
+        for (let j=1;j<=(col-i);j++){
+            document.write("&nbsp&nbsp");
+        }
+        for (let j=0;j<i;j++){
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+
+
+</script>
+
 </body>
 </html>

@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let kwh = parseInt(prompt("so kwh dien da dung"));
+    if (kwh <= 50 ){
+        alert("Giá điện tháng này là: "+ kwh* 1678 + " đồng");
+    }else if (kwh <= 100 ){
+        alert("Giá điện tháng này là: "+ kwh* 1734 + " đồng");
+    }else if (kwh <= 200 ){
+        alert("Giá điện tháng này là: "+ kwh* 2014 + " đồng");
+    }else if (kwh <= 300 ){
+        alert("Giá điện tháng này là: "+ kwh* 2636 + " đồng");
+    }else if (kwh <= 400 ){
+        alert("Giá điện tháng này là: "+ kwh* 2834 + " đồng");
+    }else {
+        alert("Giá điện tháng này là: "+ kwh* 2927 + " đồng");
+    }
+</script>
+
 </body>
 </html>

@@ -1,10 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+        <label>Amount</label>
+        <input type = "text" name="Amount" size="10" id="amount"/>
+        <label>From Currency</label>
+        <select name="currency" id="rate1">
+            <option >VND</option>
+            <option >USD</option>
+        </select>
+        <label>To Currency</label>
+        <select name="currency" id="rate2">
+            <option >VND</option>
+            <option >USD</option>
+        </select>
+        <button onclick="convert()">Convert</button>
+        <br>
+        <p id ="output"></p>
+        <script>
+            let crrncy = {'VND': {'USD':0.000044},'USD': {'VND': 22758.31}};
+            let inputFrom = document.getElementById('rate1');
+            let inputTo = document.getElementById('rate2');
+            let inputAmount = document.getElementById('amount');
+            function convert() {
+                let amount = inputAmount.value;
+                let from = inputFrom.value;
+                let to = inputTo.value;
+                if (from == to) {
+                    result = amount;
+                } else {
+                    result = amount * crrncy[from][to];
+                }
+                document.getElementById('output').innerText = "The result is " + result;
+            }
+        </script>
+
+
+
+
+    </tr>
+
+
 </body>
 </html>

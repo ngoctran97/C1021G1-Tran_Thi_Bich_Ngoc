@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let a = [1,4,66,77,54,12,5,90,8,10];
+    let sum = 0;
+    let dem = 0;
+    let b = [];
+    for(let i = 0; i < a.length ; i++){
+        if( a[i] >= 10){
+            dem++;
+            sum += a[i];
+            b.push(a[i]);
+        }
+    }
+    document.write("có "+ dem +" phân tử trong màng lớn hơn 10 là :"+b+"<br>");
+    document.write("tổng các số trong mảng lớn hơn 10 la :"+ sum);
+</script>
+
 </body>
 </html>

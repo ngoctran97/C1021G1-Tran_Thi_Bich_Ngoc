@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    function tinhTu(a){
+        ngoisao = ["Polaris","Aldebaran", "Deneb","Vega", "Altair", "Dubhe ", "Regulus"];
+        chomsao =  ["Ursa Minor","Tarurus","Cygnus", "Lyra"," Aquila","Ursa Major" , "Leo"];
+        let flag = true;
+
+        let c = ngoisao.indexOf(a);
+        if(c !== -1) {
+                alert(chomsao[c]);
+            }else {
+        alert('Không tìm thấy tên ngôi sao tương ứng');
+
+        }
+
+    }
+    let abcb = prompt('Nhập tên ngôi sao');
+    tinhTu(abcb);
+</script>
+
 </body>
 </html>
