@@ -6,23 +6,29 @@
 </head>
 <body>
 <script>
-  let vitri = parseInt(prompt("vi tri muon them so vao mang"));
-  let so = parseInt(prompt("so vao mang"));
+  // let vitri = parseInt(prompt("vi tri muon them so vao mang"));
+  // let so = parseInt(prompt("so vao mang"));
+  // let a = [1,2,3,4,5,6];
+  // if(vitri > a.length || vitri < 0) {
+  //   document.write("kho the chen")
+  // }
+  // else if (vitri === a.length)
+  // {
+  //   a.push(so);
+  // }
+  // else {
+  //   a.push(a[a.length-1]);
+  //   for(let i = a.length - 3; i >= vitri; i--)
+  //     a[i + 1] = a[i];
+  //   a[vitri] = so;
+  // }
+  // document.writeln(a);
+
+
+
   let a = [1,2,3,4,5,6];
-  if(vitri > a.length || vitri < 0) {
-    document.write("kho the chen")
-  }
-  else if (vitri === a.length)
-  {
-    a.push(so);
-  }
-  else {
-    a.push(a[a.length-1]);
-    for(let i = a.length - 3; i >= vitri; i--)
-      a[i + 1] = a[i];
-    a[vitri] = so;
-  }
-  document.writeln(a);
+  a.splice(3,0,'10'); // 3 là vị trí muốn chèn, // 0 là vị trí muốn xoá, // 10 là số muốn chèn
+  document.write(a);
 </script>
 
 </body>

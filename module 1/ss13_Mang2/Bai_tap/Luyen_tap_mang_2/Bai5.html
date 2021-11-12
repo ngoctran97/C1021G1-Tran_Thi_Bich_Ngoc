@@ -8,6 +8,24 @@
 <script>
     let a = "tranthibichngoc";
     let b = "xiukoixinhdep";
+    let dem = 0;
+    if (a.length === b.length){
+        for (let i = 0; i < a.length; i++){
+            for (let j = 0; j < b.length;j++){
+              if (a[i] === b[j]){
+                  dem++;
+                  break;
+              }
+            }
+        }
+        if (dem === a.length && dem === b.length){
+            alert("hai chuỗi này giống nhau")
+        }else {
+            alert ("hai chuỗi này giống bằng nhau");
+        }
+    }else {
+        alert ("hai chuỗi này không giống nhau");
+    }
 
 </script>
 
