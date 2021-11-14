@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class ChuNhat{
+        constructor(dai,rong) {
+            this.dai = dai;
+            this.rong = rong;
+        }
+        getDai(){
+            return this.dai;
+        }
+        getRong(){
+            return this.rong;
+        }
+        setDai(dai){
+            this.dai  = dai;
+        }
+        setRong(rong){
+            this.rong = rong;
+        }
+        getChuVi(){
+            return (this.dai + this.rong)*2;
+        }
+        getDienTich(){
+            return (this.dai* this.rong);
+        }
+    }
+    let hinhchunhat = new ChuNhat(6,4);
+    let chuvi = hinhchunhat.getChuVi();
+    let dientich = hinhchunhat.getDienTich();
+    alert("chu vi la : " + chuvi + " dien tich la : " + dientich);
+
+
+    let a = parseInt(prompt("mhap chieu dai"));
+    let b = parseInt(prompt("nhap chieu rong"));
+
+    hinhchunhat.setDai(a);
+    hinhchunhat.setRong(b);
+    chuvi = hinhchunhat.getChuVi();
+    dientich = hinhchunhat.getDienTich();
+    alert("chu vi la : " + chuvi + " dien tich la : " + dientich);
+
+    // class HinhTron {
+    //     constructor(bankinh) {
+    //         this.bankinh = bankinh;
+    //     }
+    //     getBanKinh(){
+    //         return this.bankinh;
+    //     }
+    //     getDienTich(){
+    //         return Math.PI * this.bankinh * this.bankinh;
+    //     }
+    //     getChuVi(){
+    //         return Math.PI *(this.bankinh *2);
+    //     }
+    //
+    // }
+    // let circle = new HinhTron(3);
+    // let dientich = circle.getDienTich();
+    // let chuvi = circle.getChuVi();
+    // alert ("dien tich hnh tron la : " + dientich + (" chu vi hinh tron la : " + chuvi));
+
+
+
+
+
+</script>
+
+</body>
+</html>

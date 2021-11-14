@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class MyDate1{
+        // dùng để khởi tạo đối tượng ( chứa các thuộc tính. nó sẽ được gọi thông qua từ khóa new
+        constructor(ngay, thang, nam) {
+            this.day = ngay;
+
+            this.month = thang;
+
+            this.year = nam;
+        }
+        getDay(){
+            return this.day;
+        }
+        getMonth(){
+            return this.month;
+        }
+        getYear(){
+            return this.year;
+        }
+        setDay(day){ // day là tham số , biến local
+            this.day=day;// this.day: biến thuojctinsh của đối tượng
+        }
+        setMonth(month){
+            this.month=month;
+        }
+        setYear(year){
+            this.year=year;
+        }
+        setDate(day,month,year){
+            this.day=day;
+            this.month=month;
+            this.year =year;
+        }
+        toString(){
+            return this.day+"/"+this.month+"/"+this.year
+        }
+
+    }
+
+    let date1 = new MyDate1(20,10,2021);
+    let ngay = date1.getDay()
+    let thang = date1.getMonth();
+    let nam = date1.getYear();
+    alert(ngay+"/"+thang+"/"+nam);
+
+
+    date1.setDay(31);
+    date1.setMonth(12);
+    date1.setYear(2022);
+
+    ngay = date1.getDay()
+    thang = date1.getMonth();
+    nam = date1.getYear();
+    alert(ngay+"/"+thang+"/"+nam);
+
+    // module 1 có thể dùng =>
+    // module 2 không dùng (Encapsulation) => tính báo đóng khong cho phép truy cập trực tiếp vào thuộc tính
+    date1.day ="01";
+    date1.month="02";
+    date1.year ="2019";
+
+    ngay = date1.day
+    thang = date1.month;
+    nam = date1.year;
+    alert(ngay+"/"+thang+"/"+nam);
+    date1.setDate("02","02","2018");
+    alert(date1.toString());
+    let date2 = new MyDate1("11","11","2011");
+
+</script>
+
+</body>
+</html>

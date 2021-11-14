@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // function XiuDate(day, month, year) {
+    //     this.day = day;
+    //     this.month =  month;
+    //     this.year =  year;
+    //     this.getDay = function () {
+    //         return this.day;
+    //     }
+    //     this.getMonth = function () {
+    //         return this.month;
+    //     }
+    //     this.getYear = function () {
+    //         return this.year;
+    //     }
+    //     this.setDay  = function (day) {
+    //         this.day = day;
+    //     }
+    //     this.setMonth  = function (month) {
+    //         this.month = month;
+    //     }
+    //     this.setYear  = function (year) {
+    //         this.year = year;
+    //     }
+    //     this.setDate = function(day, month, year){
+    //         this.day = day;
+    //         this.month = month;
+    //         this.year = year;
+    //     }
+    //     this.toString = function() {
+    //         let  str = ""
+    //         str += this.day + "/" + this.month + "/" + this.year + "</br>";
+    //         return str;
+    //     }
+    // }
+    //
+    // let homnay = new XiuDate(13,11,2021);
+    // document.write(homnay.toString());
+    // homnay.setDay(25);
+    // document.write(homnay.getDay());
+    // document.write(homnay.toString());
+
+    class MyDate {
+        constructor(ngay,thang,nam) {
+            this.ngay = ngay;
+            this.thang = thang ;
+            this.nam = nam ;
+        }
+        getNgay(){
+            return this.ngay;
+        }
+        getThang(){
+            return this.thang;
+        }
+        getNam(){
+            return this.nam;
+        }
+        setNgay(ngay){
+            this.ngay = ngay;
+        }
+        setThang(thang){
+            this.thang = thang;
+        }
+        setNam(nam){
+            this.nam = nam;
+        }
+        setDate(){
+            this.ngay = ngay;
+            this.thang = thang ;
+            this.nam = nam;
+        }
+        toString(){
+            return this.ngay + "/" +this.thang+ "/" + this.nam ;
+        }
+    }
+    let lich = new MyDate(27,6,1997);
+    let ngay = lich.getNgay();
+    let thang = lich.getThang();
+    let nam = lich.getNam();
+    //document.write("ngay thang nam sinh cua xiu la : " + ngay +"/" + thang + "/" + nam);
+    document.write("ngay thang nam sinh cua xiu la : " + lich.toString() + "<br/>");
+
+    lich.setNgay(14);
+    lich.setThang(11);
+    lich.setNam(2021);
+    document.write("hom nay la ngay : " + lich.toString()+ "<br/>");
+
+    let a = parseInt(prompt("nhap ngay"));
+    let b = parseInt(prompt("nhap thang"));
+    let c = parseInt(prompt("nhap nam"));
+    lich.setNgay(a);
+    lich.setThang(b);
+    lich.setNam(c);
+    document.write("xinh nhat me la : " + lich.toString());
+</script>
+
+</body>
+</html>

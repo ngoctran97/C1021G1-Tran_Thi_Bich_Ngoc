@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class temperature{
+        constructor(c) {
+            if(c >= -273) {
+                this.c = c;
+            }
+            else {
+                this.c = -273;
+                alert("Nhiet do toi thieu la -273 do C");
+            }
+        }
+        getC(){
+
+            return this.c;
+        }
+        setC(c){
+            if(c >= -273) {
+                this.c = c;
+            }
+            else {
+                this.c = -273;
+                alert("Nhiet do toi thieu la -273 do C");
+            }
+        }
+
+        getDoF(){
+            return (this.c * 9) / 2 + 32;
+        }
+
+        getKenvin(){
+            return this.c + 273.15;
+        }
+    }
+    let chuyendoi = new temperature(25);
+    let dof = chuyendoi.getDoF();
+    let kenvin = chuyendoi.getKenvin();
+    alert(chuyendoi.getC() +  " bang do F la " + chuyendoi.getDoF() + " do kenvin la : " + chuyendoi.getKenvin() );
+
+    let c = parseInt(prompt("nhap nhiet do muon doi"));
+    chuyendoi.setC(c);
+    dof = chuyendoi.getDoF();
+    kenvin = chuyendoi.getKenvin();
+    alert( "do F la " + dof + " do kenvin la : " + kenvin );
+
+</script>
+
+</body>
+</html>
