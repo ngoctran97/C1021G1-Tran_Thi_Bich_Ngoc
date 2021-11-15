@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let m = parseInt(prompt("nhap so hang"));
+    // let n = parseInt(prompt("nhap so cot"));
+    // let sum = 0;
+    // for ( let i = 1; i <= m; i++){
+    //     for (let j = 1; j <= n; j++){
+    //         if (j % 2 === 0){
+    //             sum += j;
+    //         }
+    //     }
+    // }
+    // document.write(sum);
+
+
+    function number(arr){
+        let sum = 0;
+        for ( let i = 0; i < arr.length; i++){
+            for (let j = 0; j < arr[i].length; j++){
+                if ( arr[i][j]%2 === 0){
+                    sum += arr[i][j];
+                }
+            }
+        }
+        return sum;
+    }
+    let arr = [[3,5,6,0,3,1,1,7,9],[8,6,5,4,7,6,4,0,8]];
+    let result = number(arr);
+    document.write("tong cac so chan trong han la:"+result);
+
+</script>
+
+</body>
+</html>

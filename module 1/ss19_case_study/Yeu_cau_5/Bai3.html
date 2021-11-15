@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function minMax (arr){
+        let min = arr[0][0];
+        let max = arr[0][0];
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] < min) {
+                    min = arr[i][j];
+                }
+            }
+        }
+        alert("gia tri nho nhat la : " + min);
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] > max) {
+                    max = arr[i][j];
+                    }
+                }
+
+            }
+        alert("gia tri lon nhat la : " + max);
+    }
+    let array = [[13,5,6,7,3,5],[6,4,9,12,55,23,61]];
+    minMax(array);
+</script>
+
+</body>
+</html>

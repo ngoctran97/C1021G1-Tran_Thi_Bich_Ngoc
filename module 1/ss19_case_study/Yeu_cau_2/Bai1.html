@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let luong = parseInt(prompt("nhập lương nhân viên (don vi trieu)"));
+    let thue ;
+    let luongRong ;
+    if (luong >= 15 ){
+        thue = luong * 0.2 ; // thue 20%
+        luongRong = luong - thue;
+    }else if ( luong >= 7) {
+        thue = luong * 0.1 ; // thue 10%
+        luongRong = luong - thue;
+    }else {
+        thue = luong * 0.05 ; // thue 5%
+    }
+    document.write("số tiền thuế phải nộp trong " + luong + " triệu là :" + thue + " tr "+"<br/>" );
+    document.write("số tiền lương ròng nhận được là : " + luongRong + "tr");
+</script>
+
+</body>
+</html>
