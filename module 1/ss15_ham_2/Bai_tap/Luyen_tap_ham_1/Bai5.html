@@ -6,22 +6,35 @@
 </head>
 <body>
 <script>
-    function tinhTu(a){
-        ngoisao = ["Polaris","Aldebaran", "Deneb","Vega", "Altair", "Dubhe ", "Regulus"];
-        chomsao =  ["Ursa Minor","Tarurus","Cygnus", "Lyra"," Aquila","Ursa Major" , "Leo"];
-        let flag = true;
+    // function tinhTu(a){
+    //     ngoisao = ["Polaris","Aldebaran", "Deneb","Vega", "Altair", "Dubhe ", "Regulus"];
+    //     chomsao =  ["Ursa Minor","Tarurus","Cygnus", "Lyra"," Aquila","Ursa Major" , "Leo"];
+    //     let flag = true;
+    //
+    //     let c = ngoisao.indexOf(a);
+    //     if(c !== -1) {
+    //             alert(chomsao[c]);
+    //         }else {
+    //     alert('Không tìm thấy tên ngôi sao tương ứng');
+    //
+    //     }
+    //
+    // }
+    // let abcb = prompt('Nhập tên ngôi sao');
+    // tinhTu(abcb);
 
-        let c = ngoisao.indexOf(a);
-        if(c !== -1) {
-                alert(chomsao[c]);
-            }else {
-        alert('Không tìm thấy tên ngôi sao tương ứng');
+
+    let a = prompt("nhap ngoi sao");
+    let ngoiSao = ["Polaris","Aldebaran", "Deneb","Vega", "Altair", "Dubhe ", "Regulus"];
+    let chomSao =  ["Ursa Minor","Tarurus","Cygnus", "Lyra"," Aquila","Ursa Major" , "Leo"];
+
+    for (let i = 0; i < ngoiSao.length ; i++){
+        if(a == ngoiSao[i]){
+
 
         }
 
     }
-    let abcb = prompt('Nhập tên ngôi sao');
-    tinhTu(abcb);
 </script>
 
 </body>

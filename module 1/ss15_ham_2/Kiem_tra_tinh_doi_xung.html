@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPalindrome (s){
+        if(s.length === 1){
+            return "chuổi đối xứng";
+        }
+        for (let i = 0; i <= s.length/2; i++) {
+            if (s[i] === s[s.length - 1 - i]) {
+               return "chuổi đối xứng";
+            }
+        }
+        return "chuổi khong đối xứng" ;
+    }
+    let a = prompt("nhập chuổi");
+    alert(isPalindrome (a));
+    
+</script>
+
+</body>
+</html>
