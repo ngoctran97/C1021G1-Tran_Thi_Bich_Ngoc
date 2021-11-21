@@ -6,11 +6,31 @@
 </head>
 <body>
 <script>
-    let a;
-    let b = parseInt(prompt("so mang mang a "));
-    let c = parseInt(prompt("so ky tu trong 1 MANG LA"));
-    a= b* c;
-    console.log("số phần tử trong mang a la : "+ a );
+    // let arr = [ 'c', 's', 'c', '2', '6', '1', "b" ];
+    // document.write(arr+"<hr>");
+    // let number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+    // let count = 0
+    // for (let i=0; i<arr.length; i++){
+    //     if (number.indexOf(arr[i]) !== -1){
+    //         count++;
+    //     }
+    // }
+    // document.write("Có "+count+" ký tự số trong mảng")
+
+    let arr = [];
+    let maxlength = prompt('Nhập độ dài mảng');
+    let count = 0;
+    for (let i = 0; i < maxlength; i++) {
+        let value = prompt('Nhập giá trị cho phần tử ' + i);
+        arr.push(value);
+    }
+    console.log('Mảng arr là: ' + arr.join(' '));
+    for (let j = 0; j < arr.length; j++){
+        if(arr[j] % 2 === 0 || arr[j] % 2 !== 0){
+            count++;
+        }
+    }
+    document.write('Số ký tự số trong mảng là: ' + count);
 
 </script>
 

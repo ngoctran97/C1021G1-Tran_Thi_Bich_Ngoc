@@ -5,16 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-<table border="1">
-    <tr>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-    </tr>
-</table>
 <p id="display"></p>
 <script>
     let array = new Array(10);
@@ -24,7 +14,7 @@
             array[i][j] = "";
         }
     }
-    let player1=true;
+    let player1 = true;
     display();
     function display() {
         let tableString = '<table border="1">';
@@ -39,15 +29,15 @@
         document.getElementById("display").innerHTML = tableString;
     }
     function played(i,j) {
-        if (player1&&!checkPlayed(i,j)){
+        if (player1 && !checkPlayed(i,j)){
             array[i][j]="X";
-            player1=false;
+            player1 = false;
             if (checkWin()){
                 alert(" người chơi 1 chiến thắng")
             }
-        }else if(!player1&&!checkPlayed(i,j)){
-            array[i][j]="O"
-            player1 =true;
+        }else if(!player1 && !checkPlayed(i,j)){
+            array[i][j] = "O";
+            player1 = true;
             if (checkWin()){
                 alert("người chơi 2 chiến thắng")
             }
@@ -56,7 +46,7 @@
         display();
     }
     function checkPlayed(i,j) {
-        if (array[i][j] ==="X"||array[i][j] ==="O"){
+        if (array[i][j] === "X"||array[i][j] === "O"){
             alert("ô này đã đánh rồi bạn ơi !")
             return true;
         }else {
@@ -67,29 +57,29 @@
         for (let i = 0; i < 10; i++) {
             for (let j = 0; j < 10; j++) {
                 if (array[i][j]==="X"){
-                    if (array[i][j+1]==="X"&&array[i][j+2]==="X"){
+                    if (array[i][j+1]==="X"&&array[i][j+4]==="X"){
                         return true;
                     }
-                    if (array[i+1][j]==="X"&&array[i+2][j]==="X"){
+                    if (array[i+1][j]==="X"&&array[i+4][j]==="X"){
                         return true;
                     }
-                    if (array[i+1][j+1]==="X"&&array[i+2][j+2]==="X"){
+                    if (array[i+1][j+1]==="X"&&array[i+4][j+4]==="X"){
                         return true;
                     }
-                    if (array[i+1][j-1]==="X"&&array[i+2][j-2]==="X"){
+                    if (array[i+1][j-1]==="X"&&array[i+4][j-4]==="X"){
                         return true;
                     }
                 }else if (array[i][j]==="O"){
-                    if (array[i][j+1]==="O"&&array[i][j+2]==="O"){
+                    if (array[i][j+1]==="O"&&array[i][j+4]==="O"){
                         return true;
                     }
-                    if (array[i+1][j]==="O"&&array[i+2][j]==="O"){
+                    if (array[i+1][j]==="O"&&array[i+4][j]==="O"){
                         return true;
                     }
-                    if (array[i+1][j+1]==="O"&&array[i+2][j+2]==="O"){
+                    if (array[i+1][j+1]==="O"&&array[i+4][j+4]==="O"){
                         return true;
                     }
-                    if (array[i+1][j-1]==="O"&&array[i+2][j-2]==="O"){
+                    if (array[i+1][j-1]==="O"&&array[i+4][j-4]==="O"){
                         return true;
                     }
                 }

@@ -5,30 +5,38 @@
     <title>Title</title>
 </head>
 <body>
+<ph3> Menu</ph3>
+<br>
 <script>
-    let menu = parseInt(prompt("nhâp số để oder mốn bạn muốn gọi  1. cafe, 2. cam vắt, 3. nước ép carot, 4. nước ép ca chua, 5. nước lọc, 6. nước dứa, nhấn 7 để kết thúc"));
-    let soluong = parseInt(prompt("so luong ban muon goi"));
-    let re
-    switch (menu === 7){
-        case '1' :
-            alert(10000);
+     let menu1 = ["1.cafe"," 2. cam vắt", " 3. Nước ép cà rốt", " 4. nước ép cà chua", " 5. nước lọc"," 6. nước dừa"];
+     document.write(menu1);
+     let menu = parseInt(prompt("Nhập món bận muốn oder 1. cafe, 2. cam vắt, 3. nước ép cả rốt, 4. nước ép cà chua, 5. nước lọc, 6. nước dừa "));
+     do{
+
+     }
+     while (menu < 7)
+    switch (menu < 7){
+        case "1":
+            result = 10000;
             break;
-        case '2' :
-            alert(10000);
+        case "2":
+            result = 10000;
             break;
-        case '3' :
-            alert(15000);
+        case "3":
+            result = 15000;
             break;
-        case '4' :
-            alert(15000);
+        case "4":
+            result = 15000;
             break;
-        case '5' :
-            alert(20000);
+        case "5":
+            result = 10000;
             break;
-        case '6' :
-            alert(20000);
+        case "6":
+            result = 10000;
             break;
     }
+     let soLuong = parseInt(prompt("số lương");
+     let tong = menu *soLuong;
 
 
 </script>

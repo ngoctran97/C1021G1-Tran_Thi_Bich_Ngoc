@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Add Product</h3>
+<div>
+    <input type="text" id="nameProduct">
+    <button onclick="addProduct()">Add</button>
+</div>
+<h3>Display Product</h3>
+<table id="tblProduct" border="1">
+
+</table>
+<script>
+
+    // // for of
+    // for (let productE of products) {
+    //     console.log(productE);
+    // }
+    //
+    // // for in ~ index
+    // for (let productE in products) {
+    //     console.log(productE);
+    // }
+    let products = ["May tinh", "Dien thoai", "May giat"];
+
+    // C1
+    // function loadDataProduct() {
+    //     let tblProductHTML = `
+    //         <tr>
+    //             <th>Product Name</th>
+    //             <th>Action</th>
+    //         </tr>`;
+    //     for (let i = 0; i < products.length; i++) {
+    //         tblProductHTML += `
+    //                 <tr>
+    //                     <td>${products[i]}</td>
+    //                     <td>
+    //                         <button>Edit</button>
+    //                         <button>Delete</button>
+    //                     </td>
+    //                 </tr>
+    //             `;
+    //     }
+    //
+    //     document.getElementById("tblProduct").innerHTML = tblProductHTML;
+    // }
+
+    // C2
+    function loadDataProduct() {
+        let tblProductHTML =
+            "<tr>"
+            + "<th>Product Name</th>"
+            + "<th>Action</th>"
+            + "</tr>";
+        for (let i = 0; i < products.length; i++) {
+            tblProductHTML +=
+                "<tr>"
+                + "<td>" + products[i] + "</td>"
+                + "<td>"
+                + "<button>Edit</button>"
+                + "<button>Delete</button>"
+                + "</td>" +
+                "</tr>";
+        }
+        document.getElementById("tblProduct").innerHTML = tblProductHTML;
+    }
+    loadDataProduct();
+    function addProduct() {
+        let name = document.getElementById("nameProduct").value;
+        products.push(name);
+        loadDataProduct();
+    }
+
+</script>
+</body>
+</html>

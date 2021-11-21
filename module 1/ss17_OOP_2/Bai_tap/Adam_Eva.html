@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  class Apple{
+      constructor(khoiLuong) {
+          this.khoiLuong = khoiLuong;
+      }
+  }
+  class Human {
+      constructor(name, gender, weight) {
+          this.name = name;
+          this.gender = gender;
+          this.weight = weight;
+      }
+      noiChuyen (text){
+          console.log(this.name + ": " +text);
+      }
+      anTao () {
+          console.log(this.name + " ăn táo ");
+          this.weight++;
+          tao.khoiLuong--;
+          console.log("khối lượng của "+this.name + " sau khi ăn táo là: " + this.weight);
+      }
+      kiemTra (apple) {
+          console.log("khối lượng quả táo sau khi bị ăn là : "+ tao.khoiLuong);
+      }
+  }
+  let tao = new Apple(10);
+  let adam = new Human("Adam", "nam", 55);
+  let eva = new Human("Eva", "nu", 45);
+  console.log((adam));
+  console.log(eva);
+  eva.noiChuyen("Chào anh em tên là eva");
+  adam.noiChuyen("chào em, em có muốn ăn táo không ? ");
+  eva.anTao();
+  adam.anTao();
+  adam.noiChuyen("em ăn thêm đi")
+  eva.noiChuyen("em no rối anh ăn hết đi");
+  adam.kiemTra();
+</script>
+
+</body>
+</html>

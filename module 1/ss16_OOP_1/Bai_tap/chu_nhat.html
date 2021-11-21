@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result"></p>
+<p id="area"></p>
+<p id="perimeter"></p>
+<canvas id="myCanvas" width="1368px" height="500px" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+    class rectangle{
+        constructor(height,width) {
+            this.height = height;
+            this.width = width;
+        }
+        getHeight(){
+            return this.height;
+        }
+        getWidth(){
+            return this.width;
+        }
+        setRectangle(height,width){
+            this.height = height;
+            this.width = width;
+        }
+        areaRectangle(){
+            return height*width;
+        }
+        perimeterRectangle(){
+            return (height+width)*2;
+        }
+        createRectangle(){
+            let ctx = document.getElementById('myCanvas').getContext('2d');
+            let height = this.getHeight()*10;
+            let width = this.getWidth()*10;
+            ctx.beginPath();
+            ctx.moveTo(0,0);
+            ctx.fillRect(0,0,height,width);
+        }
+    }
+    let rectangle1 = new rectangle(20,10);
+    let height = rectangle1.getHeight();
+    let width = rectangle1.getWidth();
+    document.getElementById('result').innerText = 'Chiều dài: ' + height + ' và ' + 'Chiều rộng: ' + width;
+    let area = rectangle1.areaRectangle();
+    document.getElementById('area').innerText = "Diện tích hình chữ nhật: " + area;
+    let perimeter = rectangle1.perimeterRectangle();
+    document.getElementById('perimeter').innerText = "Chu vi hình chữ nhật: " + perimeter;
+    rectangle1.createRectangle();
+
+    rectangle1.setRectangle(15,15);
+    let height1 = rectangle1.getHeight();
+    let width1 = rectangle1.getWidth();
+    document.getElementById('result').innerText = 'Chiều dài: ' + height1 + ' và ' + 'Chiều rộng: ' + width1;
+    let area1 = rectangle1.areaRectangle();
+    document.getElementById('area').innerText = "Diện tích hình chữ nhật: " + area1;
+    let perimeter1 = rectangle1.perimeterRectangle();
+    document.getElementById('perimeter').innerText = "Chu vi hình chữ nhật: " + perimeter1;
+    rectangle1.createRectangle();
+
+</script>
+</body>
+</html>

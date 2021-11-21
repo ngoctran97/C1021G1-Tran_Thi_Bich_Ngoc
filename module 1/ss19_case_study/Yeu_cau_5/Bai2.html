@@ -6,13 +6,37 @@
 </head>
 <body>
 <script>
-    let a = [[3,6,8,911,45,23,17,41],[99,67,11,3,7,8,23,43,79]];
-    let b = a.concat();
-    //document.write(b);
-    let c = [];
-    for(let i = 0 ; i< a.length; i++){
-        if(a[i] % )
+    let a = [[1,2,3,4,5,6,7,8],[9,10,11,12,13,14,15,16,17]];
+    demSoNguyenTo(a)
+    function kiemTraSoNguyenTo(n) {
+        if (n >= 2) {
+            for (let i = 2; i < n; i++) {
+                if (n % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }else {
+            return false
+        }
     }
+    function demSoNguyenTo(a) {
+        let count = 0;
+        let newArr = [];
+        for (let i = 0; i < a.length; i++){
+            for ( let j = 0; j < a[i].length; j++){
+                if(kiemTraSoNguyenTo(a[i][j])){
+                    count++;
+                    newArr.push(a[i][j]);
+                }
+            }
+        }
+        document.write("các số nguyên tố có trong mảng là : " + newArr +"<br/>");
+        document.write("tổng cố nguyên tố có trong mảng là : " + count);
+    }
+
+
+
 
 </script>
 

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  class Chuot {
+    constructor(ten, khoiluong, tocDo, trangThai) {
+      this.ten = ten;
+      this.khoiluong = khoiluong;
+      this.tocDo = tocDo;
+      this.trangThai = trangThai;
+    }
+    hanhViKeu () {
+      console.log(this.ten + " : chit , chit");
+    }
+  }
+
+  class Meo {
+    constructor(ten, khoiluong, tocDo) {
+      this.ten = ten;
+      this.khoiluong = khoiluong;
+      this.tocDo = tocDo;
+    }
+    hanhViKeu () {
+      console.log(this.ten + " : meo , meo");
+    }
+    hanhViBatChuot() {
+      console.log("bat chuot");
+      if (this.tocDo > chuotObj.tocDo) {
+        this.hanhViAnChuot(chuotObj);
+      } else {
+        console.log("chuot chay nhanh qua, khong bawc duoc");
+      }
+    }
+      hanhViAnChuot(chuotObj){
+        console.log("An Chuot");
+        if (chuotObj.trangThai == "song") {
+          this.khoiluong += chuotObj.khoiluong;
+          // chuotObj.trangThai = "chet";
+          console.log("thit chuot ngon qua. khoi luong meo : " + this.khoiluong);
+        }else{
+          console.log("chuot chet roi hoi qua");
+        }
+      }
+  }
+
+  let chuotObj = new Chuot ("jerry", 3,9,"chet");
+  let meoObj = new Meo ("Tom", 6, 15);
+  console.log(chuotObj);
+  console.log(meoObj);
+  chuotObj.hanhViKeu();
+  meoObj.hanhViKeu();
+  meoObj.hanhViBatChuot(chuotObj);
+
+
+
+
+
+</script>
+
+</body>
+</html>

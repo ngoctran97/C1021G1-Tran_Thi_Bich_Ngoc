@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--header-->
+<div>
+    <table>
+        <th><img src="logo.jpg" alt="đây là logo" width="50px"></th>
+        <th width="500"><h2>Quản lý bài tập</h2></th>
+    </table>
+
+
+</div>
+<!--body-->
+<div>
+    <h3>Yêu Cầu 1-Vẽ hình '*'</h3>
+    <input type="button" onclick="yc1Bai1()" value="Bài 1"> Vẽ hình chữ nhật rỗng chiều dài n và chiều rộng m.
+    <br>
+    <input type="button" onclick="yc1Bai2()" value="Bài 2"> Vẽ tam giác vuông cân rỗng có chiều cao h.
+    <br>
+    <input type="button" onclick="yc1Bai3()" value="Bài 3"> Vẽ tam giác cân đặc có chiều cao h.
+    <br>
+    <input type="button" onclick="yc1Bai4()" value="Bài 4"> Vẽ tam giác cân rỗng có chiều cao h.
+    <br>
+    <h3>Yêu Cầu 2-If và switch case</h3>
+    <input type="button" onclick="yc2Bai1()" value="Bài 1"> Viết một chương trình để nhập lương nhân viên.
+    <br>
+    <input type="button" onclick="yc2Bai2()" value="Bài 2"> Viết chương trình kiểm tra một ký tự trong bảng chữ cái
+    tiếng anh.
+    <br>
+    <h3>Yêu Cầu 3-Mảng và Loop</h3>
+    <input type="button" onclick="yc3Bai1()" value="Bài 1"> Xây dựng mảng b là prefix sums của mảng a.
+    <br>
+    <input type="button" onclick="yc3Bai2()" value="Bài 2"> Cho 2 mảng A và B chứa số nguyên. Tìm ra một mảng đã được
+    sắp xếp chứa các phần tử xuất hiện trong mảng B nhưng lại không xuất hiện A.
+    <br>
+    <input type="button" onclick="yc3Bai3()" value="Bài 3"> Cho một danh sách các phân số, hãy tìm chỉ số của phân số
+    lớn nhất
+    <br>
+    <input type="button" onclick="yc3Bai4()" value="Bài 4"> Nhập một số từ bàn phím và in ra màn hình bằng chữ
+    <br>
+    <input type="button" onclick="yc3Bai5()" value="Bài 5"> Viết một chương trình gọi thức uống đơn giản.
+    <br>
+    <h3>Yêu Cầu 4-String</h3>
+    <input type="button" onclick="yc4Bai1()" value="Bài 1"> Viết một hàm chuẩn hóa xâu ký tự.
+    <br>
+    <input type="button" onclick="yc4Bai2()" value="Bài 2"> Hãy đếm số lượng kí tự khác nhau trong xâu.
+    <br>
+    <input type="button" onclick="yc4Bai3()" value="Bài 3"> Cho hai xâu kí tự, tìm số lượng kí tự chung giữa chúng.
+    <br>
+    <h3>Yêu Cầu 5-Mảng 2 chiều</h3>
+    <input type="button" onclick="yc5Bai1()" value="Bài 1"> Viết hàm tính tổng các số chẵn trong ma trận có kích thước.
+    m*n.
+    <br>
+    <input type="button" onclick="yc5Bai2()" value="Bài 2"> Viết hàm liệt kê và đếm các số nguyên tố trong mảng 2 chiều.
+    <br>
+    <input type="button" onclick="yc5Bai3()" value="Bài 3"> Viết hàm tìm giá trị lớn nhất, nhỏ nhất trong mảng 2 chiều
+    <br>
+</div>
+<!--footer-->
+<br>
+<div style="background: #0000ff">
+    <br><br><br>
+</div>
+
+<script>
+    //YC 1
+    //hinh 1
+    function yc1Bai1() {
+        document.write('Bài 1: Vẽ hình chữ nhật rỗng chiều dài n và chiều rộng m.');
+        document.write('<br>');
+        let n = parseInt(prompt('Nhập chiều cao'));
+        let m = parseInt(prompt('Nhập chiều rộng'));
+        debugger
+        for (let i = 1; i <= n; i++) {
+
+            for (let j = 1; j <= m; j++) {
+                if (i == 1 || j == 1 || i == n || j == m) {
+                    document.write('*');
+                } else {
+                    document.write('&nbsp&nbsp');
+
+                }
+
+            }
+            document.write('<br>');
+        }
+    }
+
+    //hinh 2
+    function yc1Bai2() {
+        document.write('Bài 2: Vẽ tam giác vuông cân rỗng có chiều cao h.');
+        document.write('<br>');
+        let h = parseInt(prompt('Nhập chiều dài cạnh tam giác'));
+        for (let i = 1; i <= h; i++) {
+            for (let j = 1; j <= i; j++) {
+                if (j == 1 || i == h || j == i) {
+                    document.write('*');
+                } else {
+                    document.write('&nbsp&nbsp')
+                }
+
+            }
+            document.write('<br>');
+        }
+    }
+
+    //hinh 3
+    function yc1Bai3() {
+        document.write('Bài 3: Vẽ tam giác cân đặc có chiều cao h. ');
+        document.write('<br>');
+        let k = parseInt(prompt('Nhập chiều dài cạnh tam giác'));
+        for (let i = 1; i <= k; i++) {
+            for (let l = k; l >= i; l--) {
+                document.write('&nbsp&nbsp')
+            }
+
+            for (let j = 1; j <= 2 * i - 1; j++) {
+                document.write('*');
+
+            }
+            document.write('<br>');
+
+        }
+    }
+
+    //hinh 4
+    function yc1Bai4() {
+        document.write('Bài 4: Vẽ tam giác cân rỗng có chiều cao h. ');
+        document.write('<br>');
+        let k = parseInt(prompt('Nhập chiều dài cạnh tam giác'));
+        for (let i = 1; i <= k; i++) {
+            for (let l = k; l >= i; l--) {
+                document.write('&nbsp&nbsp')
+            }
+
+            for (let j = 1; j <= 2 * i - 1; j++) {
+                if (j == 1 || j == (2 * i - 1) || i == k) {
+                    document.write('*');
+                } else {
+                    document.write('&nbsp&nbsp')
+                }
+
+
+            }
+            document.write('<br>');
+
+        }
+    }
+
+    //YC 2
+    //Bai 1
+    function yc2Bai1() {
+        let nhapLuong = parseFloat(prompt('Nhập vào lương trước thuế-đơn vị triệu đồng'))
+        if (nhapLuong < 7) {
+            document.write('Lương thực nhận là: ' + (nhapLuong - (nhapLuong * 0.05)) + ' triệu đồng');
+        } else if (nhapLuong < 15) {
+            document.write('Lương thực nhận là: ' + (nhapLuong - (nhapLuong * 0.1)) + ' triệu đồng');
+        } else {
+            document.write('Lương thực nhận là: ' + (nhapLuong - (nhapLuong * 0.2)) + ' triệu đồng');
+        }
+    }
+
+    //Bai 2
+    function yc2Bai2() {
+        let nhapVao = prompt('Nhập vào ký tự cần kiểm tra')
+        switch (nhapVao) {
+            case 'u':
+            case 'o':
+            case 'i':
+            case 'a':
+            case 'e':
+            case 'O':
+            case 'I':
+            case 'A':
+            case 'E':
+            case 'U':
+                document.write('Ký tự nhập vào là nguyên âm')
+                break
+            default:
+                document.write('Ký tự nhập vào không phải là nguyên âm')
+        }
+
+    }
+
+    //YC3
+    function khoiTaoMang(arr) {
+        //tạo mảng
+        let nummer = 0
+        let numver = ''
+        let flag = true;
+        do {
+            nummer = prompt('Nhập vào độ dài mảng');
+            if (nummer == parseInt(nummer)) {
+                flag = false;
+            }
+        } while (flag)
+        //Nhập mảng
+        for (let i = 0; i < nummer; i++) {
+            let fla = true;
+            do {
+                numver = prompt('Nhập số nguyên thứ ' + (i + 1) + ' vào mảng');
+                if (numver == parseInt(numver)) {
+                    fla = false;
+                }
+
+            } while (fla);
+            if (fla === false) {
+                arr.push(parseInt(numver));
+            }
+        }
+    }
+
+    //Bai 1
+    function yc3Bai1() {
+        let b = [];
+        let a = []
+        khoiTaoMang(a)
+        //duyệt mảng
+        alert(a)
+        for (let i = 0; i < a.length; i++) {
+            for (let j = 0; j <= i; j++) {
+                if (j < 1) {
+                    b[i] = a[i];
+                } else {
+                    b[i] += a[j - 1]
+                }
+            }
+        }
+        alert('Mảng b là: ' + b)
+    }
+
+    //Bai 2
+    function yc3Bai2() {
+        let A = [];
+        let B = [];
+        let temp = [];
+        khoiTaoMang(A);
+        khoiTaoMang(B);
+        for (let i = 0; i < B.length; i++) {
+            if (A.indexOf(B[i]) == -1) {
+                temp.push(B[i]);
+            }
+        }
+        let C = []
+        for (let j = 0; j < temp.length; j++) {
+            if (C.indexOf(temp[j]) == -1) {
+                C.push(temp[j])
+            }
+        }
+
+        if (B.length == 0 || C.length == 0) {
+            document.write('Không có giá trị nào A thiếu');
+        } else {
+            document.write('Giá trị mà A thiếu là: ' + C);
+        }
+
+    }
+
+    //Bai 3
+    function yc3Bai3() {
+        let nu = [];
+        let de = [];
+        let max = 0;
+        let num = 0;
+        let del = 0;
+        khoiTaoMang(nu);
+        khoiTaoMang(de);
+        if (nu.length !== de.length) {
+            document.write('Không tạo được phân số')
+        } else {
+            for (let i = 0; i < nu.length; i++) {
+                if (nu[i] / de[i] > max) {
+                    max = (nu[i] / de[i]);
+                    num = nu[i];
+                    del = de[i]
+                }
+
+            }
+            document.write('phân số lớn nhất là: ' + num + '/' + del + ', với chỉ số là: ' + max)
+        }
+
+    }
+
+    //Bai 4
+    function yc3Bai4() {
+        let num = prompt('nhập vào số');
+        let arr = ['không', 'một', 'hai', 'ba', 'bốn', 'năm', 'sáu', 'bảy', 'tám', 'chín'];
+        let arr2 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        let temp = [];
+        for (let i = 0; i < num.length; i++) {
+            for (let j = 0; j < arr2.length; j++) {
+                if (num[i] == arr2[j]) {
+                    temp.push(arr[j]);
+                }
+            }
+        }
+        document.write(temp);
+    }
+
+    //Bai 5
+    function yc3Bai5() {
+        let flag = true;
+        let temp = [];
+        let arr = [15000, 20000, 20000, 20000, 5000, 15000, 0];
+        let arr2 = [1, 2, 3, 4, 5, 6, 7];
+        // let arr3=[];
+        // let arr4=['Cafe','Cam vắt','Nước ép cà rốt','Nước ép cà chua','Nước lọc','Nước dừa']
+        do {
+            let num = prompt('nhập vào số của món: \n' +
+                '1. Cafe\n' +
+                '2. Cam vắt\n' +
+                '3. Nước ép cà rốt\n' +
+                '4. Nước ép cà chua\n' +
+                '5. Nước lọc\n' +
+                '6. Nước dừa\n' +
+                '7. Tính tiền');
+            if (num == 7) {
+                flag = false;
+            } else if (num > 7) {
+                alert('Vui lòng nhập lại');
+            } else if (num < 7) {
+
+                for (let i = 0; i < num.length; i++) {
+                    for (let j = 0; j < arr2.length; j++) {
+                        if (num[i] == arr2[j]) {
+                            temp.push(arr[j]);
+                            // arr3.push(arr2[j]);
+                        }
+                    }
+                }
+            }
+        } while (flag);
+        let sum = 0;
+        for (let j = 0; j < temp.length; j++) {
+            sum += temp[j];
+        }
+        // alert(arr3);
+        alert('tổng tiền là: ' + sum);
+    }
+
+    //YC4
+    //Bai 1
+    function yc4Bai1() {
+
+        let string = prompt('Nhập vào tên cần chuẩn hóa:')
+        let arr = string.toLowerCase().split(' ');
+        let result = arr.map(function (word) {
+            return word.replace(word.charAt(0), word.charAt(0).toUpperCase());
+        });
+        alert(result.join(' '));
+    }
+
+    //Bai 2
+    function yc4Bai2() {
+        let arr = [];
+        let string = prompt('nhập vào chuỗi ký tự');
+        // string.split('');
+        for (let i = 0; i < string.length; i++) {
+            if (arr.indexOf(string[i]) == -1) {
+                arr.push(string[i]);
+            }
+        }
+        alert('có ' + arr.length + ' ký tự khác nhau trong chuỗi gồm: ' + arr);
+    }
+
+    //Bai 3
+    function yc4Bai3() {
+        // debugger
+        let s1 = prompt('nhập vào chuỗi 1:');
+        let s2 = prompt('nhập vào chuỗi 2:');
+        // s1.split('')
+        // s2.split('')
+        let temp=[];
+        for (let i=0; i<s1.length;i++){
+            for (let j=0;j<s2.length;j++)
+                if(s1[i] == s2[j]){
+                    temp.push(s2[j]);
+                    s2=s2.replace(s2[j],'');
+                    s1=s1.replace(s1[i],'');
+                }
+        }
+        alert('chuỗi 1 và chỗi 2 có '+temp.length+' ký tự chung gồm '+ temp);
+    }
+
+    //YC5
+    function khoiTaoMang2Chieu(arr) {
+        //tạo mảng
+        let nummer = 0
+        let numver = 0
+        let number = 0
+        let flag = true;
+        do {
+            nummer = prompt('Nhập vào độ dài mảng chính');
+            number = prompt('Nhập vào độ dài mảng con')
+            if (nummer == parseInt(nummer)) {
+                flag = false;
+            }
+        } while (flag)
+        //Nhập mảng
+        for (let i = 0; i < nummer; i++) {
+            arr[i] = [];
+            for (let j = 0; j < number; j++) {
+                let fla = true;
+                do {
+                    numver = prompt('Nhập số nguyên thứ ' + (j + 1) + ' vào mảng con thứ ' + (i + 1));
+                    if (numver == parseInt(numver)) {
+                        fla = false;
+                    }
+
+                } while (fla);
+                if (fla === false) {
+                    arr[i][j] = numver;
+                }
+            }
+
+        }
+    }
+
+    //Bai 1
+    function yc5Bai1() {
+        let array = [];
+        khoiTaoMang2Chieu(array);
+        let sum = 0;
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (array[i][j] % 2 === 0) {
+                    sum += parseInt(array[i][j]);
+                }
+            }
+        }
+        alert('tổng các số lẻ trong mảng 2 chiều là: ' + sum);
+    }
+
+    //Bai 2
+    function yc5Bai2() {
+        let array = [];
+        khoiTaoMang2Chieu(array);
+        let temp = [];
+        let flag = true;
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (array[i][j]>=2){
+                    for (let x=2;x<array[i][j];x++){
+                        if (array[i][j] % x == 0) {
+                            flag = false;
+                            break
+                        }
+                    }
+                    if(flag){
+                        temp.push(array[i][j]);
+                    }
+                }else{
+                    temp.push(array[i][j]);
+                }
+
+            }
+        }
+        alert('có '+ temp.length+' số nguyên tố trong mảng là: ' + temp);
+    }
+
+    //Bai 3
+    function yc5Bai3() {
+        let array =[];
+        let max=0
+        let min=0
+        khoiTaoMang2Chieu(array);
+        timSoLonNhat(array,max);
+        timSoNhoNhat(array,min);
+
+    }
+    function timSoLonNhat(arr) {
+        let max=0
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if(arr[i][j]>max){
+                    max=arr[i][j];
+                }
+
+            }
+        }
+        alert ('số lớn nhất trong mảng là: '+max);
+    }
+    function timSoNhoNhat(arr) {
+        let min =''
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if(arr[i][j]<min){
+                    min=arr[i][j];
+                }
+
+            }
+        }
+        alert('số nhỏ nhất trong mảng là: '+min)
+    }
+</script>
+</body>
+</html>

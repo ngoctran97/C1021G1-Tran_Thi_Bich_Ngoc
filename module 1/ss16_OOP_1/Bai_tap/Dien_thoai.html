@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Mobile {
+        constructor(name, pin, trangThai) {
+            this.name = name;
+            this.pin = pin;
+            this.trangThai = trangThai;
+            this.tinnhan = "";
+            this.hopThuDen = [];
+            this.tinNhanDaGui = [];
+        }
+        batTat() {
+            if (this.trangThai == "bat") {
+                console.log("dien thoai da duoc bat")
+            } else {
+                console.log("Dien thoai dang tat")
+            }
+        }
+
+        xacDienThoai() {
+            this.pin = 100;
+            console.log(this.name + " sau khi xạc : " + this.pin);
+        }
+
+        soanTinNhan(text) {
+            console.log(this.name + " soạn tin nhắn : " + text);
+            this.tinnhan = text;
+            this.pin--;
+            console.log("pin : " + this.pin);
+        }
+
+        guitinnhan(dich) {
+            // console.log(this.name + " gửi tin nhắn cho : " + dich.name + " với nội dung " + this.tinnhan);
+            dich.nhanTinNhan(this.tinnhan);
+            this.tinNhanDaGui.push(this.tinnhan);
+            this.tinnhan = "";
+            this.pin--;
+        }
+
+        nhanTinNhan(tinnhan) {
+            console.log(this.name + " nhận tin nhắn " + tinnhan);
+            this.hopThuDen.push(tinnhan);
+            this.pin--;
+            console.log("pin : " + this.pin);
+        }
+        xemTinNhanDaGui() {
+            console.log(this.name + " các tín nhắn đã gửi là : ")
+            for (let i = 0; i < this.tinNhanDaGui.length; i++) {
+                console.log(i + " : " + this.tinNhanDaGui[i]);
+            }
+            this.pin--;
+            console.log("pin : " + this.pin);
+        }
+        xemTinNhanDaNhan(){
+            console.log(this.name + " tin nhắn đã nhận là : " + this.hopThuDen);
+            this.pin--;
+            console.log("pin : " + this.pin);
+        }
+    }
+    let iphone = new Mobile("iphone",50,"bat" );
+    let samsum = new Mobile("samsum",70,"bat");
+    iphone.xacDienThoai();
+    iphone.soanTinNhan("xin chào samsum");
+    iphone.guitinnhan(samsum);
+    iphone.soanTinNhan("Tôi là Iphone, rất hân hạnh làm quen với bạn");
+    iphone.guitinnhan(samsum);
+    //samsum.nhanTinNhan();
+    samsum.soanTinNhan("chao ban iphone, ban co khoe khong");
+    samsum.guitinnhan(iphone);
+    //iphone.nhanTinNhan();
+    //iphone.soanTinNhan("cam own ban toi van khoe");
+    // iphone.xemTinNhanDaGui();
+    // iphone.xemTinNhanDaNhan();
+    // samsum.xemTinNhanDaGui();
+    // samsum.xemTinNhanDaNhan();
+
+</script>
+
+</body>
+</html>
