@@ -5,17 +5,124 @@
     <title>Title</title>
 </head>
 <body>
+<input type="button" value="Add New Sổ tiết kiệm" onclick="addNewSoTietKiem()">
+<p id="ketQua"></p>
 <script>
-    class soTietKiem {
-        constructor(maSo, loai, ten, cmnn, ngay, tien) {
-            this.maSo = maSo;
+    class SoTietKiem {
+        constructor( maso, loai, ten, cmnn, ngay, tien) {
+            this.maso = maso;
             this.loai = loai;
             this.ten = ten;
             this.cmnn = cmnn;
-            this.ngay = ngay;
+            this.tien = tien;
+            this._ngay = ngay;
+        }
+        getMaso(){
+            return this.maso;
+        }
+        getLoai(){
+            return this.loai;
+        }
+        getTen(){
+            return this.ten;
+        }
+        getCmnn(){
+            return this.cmnn;
+        }
+        getNgay(){
+            return this._ngay;
+        }
+        getTien(){
+            return this.tien;
+        }
+        setMaso(maso){
+            this.maso = maso;
+        }
+        setLoai(loai){
+            this.loai = loai;
+        }
+        setTen(ten){
+            this.ten = ten;
+        }
+        setCmnn(cmnn){
+            this.cmnn = cmnn;
+        }
+        setNgay(ngay){
+            this._ngay = ngay;
+        }
+        setTien(tien){
             this.tien = tien;
         }
+        toString(){
+            return "Mã số : " + this.maso + " loai " + this.loai + " ten " + this.ten +
+                " cmnn " + this.cmnn + " ngay " + this._ngay + "tien " + this.tien;
+        }
     }
+    function addNewSoTietKiem(){
+        let newMaso = prompt("Nhập mã số cần thêm ");
+        let newLoai = prompt("Nhập loại tiết kiêm cần thêm ");
+        let newTen = prompt("Nhập họ và tên cần thêm ");
+        let newCmnn = prompt("Nhập Cmnn cần thêm ");
+        let newNgay = prompt("Nhập ngày mở sỏ tiết kiệm cần thêm ");
+        let newTien = prompt("Nhập số tiền gửi cần thêm ");
+        let soTietKiem = new SoTietKiem(newMaso, newLoai, newTen, newCmnn, newNgay, newTien);
+        soTietKiemList.push(soTietKiem);
+        display(soTietKiemList);
+    }
+    function display(arrSoTietKiem) {
+        let tableString = '<table border = "1">\n'  +
+            '<tr>\n' +
+            '        <th>STT</th>\n' +
+            '   <th>mã số </th>\n'    +
+            '   <th>Loại</th>\n '   +
+            '   <th>Họ và tên</th>\n'+
+            '   <th>Cmnn</th>\n'+
+            '   <th>Ngày gửi</th>\n'+
+            '   <th>Tiền</th>\n'+
+            '   <th>Edit</th>\n' +
+            '   <th>Delete</th>\n' +
+            '<tr/>';
+        for (let i = 0; i < arrSoTietKiem.length; i++){
+            tableString += '<tr>\n ' +
+                '<td> '+(i+1)+'</td>\n' +
+                '<td>'+ arrSoTietKiem[i].getMaso()+'</td>'+
+                '<td>'+ arrSoTietKiem[i].getLoai()+'</td>'+
+                '<td>'+ arrSoTietKiem[i].getTen()+'</td>'+
+                '<td>'+ arrSoTietKiem[i].getCmnn()+'</td>'+
+                '<td>'+ arrSoTietKiem[i].getNgay()+'</td>'+
+                '<td>'+ arrSoTietKiem[i].getTien()+'</td>'+
+                '<td><input type="button" value="Edit" onclick="editSoTietKiem('+i+')"></td>\n' +
+                '<td><input type="button" value="Delete" onclick="deleteSoTietKiem('+i+')"></td>\n' +
+                '    </tr>';
+        }
+        tableString+='</table>';
+        document.getElementById("ketQua").innerHTML=tableString;
+    }
+    function editSoTietKiem(index){
+        let newMaso = prompt("nhập mã số cần edit");
+        let newLoai = prompt("nhập loại cần edit");
+        let newTen = prompt("nhập họ tên cần edit");
+        let newCmnn = prompt("nhập cmnn cần edit");
+        let newNgay = prompt("nhập ngày cần edit");
+        let newTien = prompt("nhập số tiền cần edit");
+        soTietKiemList[index].setMaso(newMaso);
+        soTietKiemList[index].setLoai(newLoai);
+        soTietKiemList[index].setTen(newTen);
+        soTietKiemList[index].setCmnn(newCmnn);
+        soTietKiemList[index].setNgay(newNgay);
+        soTietKiemList[index].setTien(newTien);
+        display(soTietKiemList);
+    }
+    function deleteSoTietKiem(index){
+        soTietKiemList.splice(index,1);
+
+        display(soTietKiemList);
+    }
+    let soTietKiemList = [];
+    let soTietKiem1 = new SoTietKiem(12345, "ngan hang", "ngoc",123456789, "11/11/2011", 1000000);
+    soTietKiemList.push(soTietKiem1);
+    display(soTietKiemList);
+
 
 </script>
 

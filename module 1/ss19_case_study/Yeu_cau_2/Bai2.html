@@ -7,12 +7,22 @@
 <body>
 <script>
     let kyTu = prompt("nhap ky tu muon kiem tra");
-    if ( kyTu === "o"|| kyTu === "u"||kyTu === "i"||kyTu === "a"||kyTu === "e"||
+    // if ( kyTu === "o"|| kyTu === "u"||kyTu === "i"||kyTu === "a"||kyTu === "e"||
+    //     kyTu === "O"||kyTu === "U"||kyTu === ""||kyTu === "a"||kyTu === "E"){
+    //     alert ("Đây là nguyen âm");
+    // }else {
+    //     alert ("Đây là phụ âm ");
+    // }
+
+    if(kyTu >0 || kyTu < 0 || kyTu === 0){
+      alert ("Đây là ký tự số");
+    }else if ( kyTu === "o"|| kyTu === "u"||kyTu === "i"||kyTu === "a"||kyTu === "e"||
         kyTu === "O"||kyTu === "U"||kyTu === ""||kyTu === "a"||kyTu === "E"){
         alert ("Đây là nguyen âm");
     }else {
         alert ("Đây là phụ âm ");
     }
+
 </script>
 
 </body>

@@ -8,16 +8,13 @@
 <script>
     let str = prompt("Nhap vao chuoi can doi")
     str = str.trim();
-
     let sentence = str.toLowerCase().split(" ");
-
     for (let i = 0; i < sentence.length; i++) {
         if (sentence[i] == "") {
             sentence.splice(i, 1);
             i--;
         }
     }
-
     for (let i = 0; i < sentence.length; i++) {
         sentence[i] = sentence[i][0].toUpperCase() + sentence[i].slice(1);
     }

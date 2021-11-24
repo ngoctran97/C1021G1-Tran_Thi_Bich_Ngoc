@@ -8,35 +8,59 @@
 <ph3> Menu</ph3>
 <br>
 <script>
-     let menu1 = ["1.cafe"," 2. cam vắt", " 3. Nước ép cà rốt", " 4. nước ép cà chua", " 5. nước lọc"," 6. nước dừa"];
-     document.write(menu1);
+     //let menu1 = ["1.cafe"," 2. cam vắt", " 3. Nước ép cà rốt", " 4. nước ép cà chua", " 5. nước lọc"," 6. nước dừa"];
      let menu = parseInt(prompt("Nhập món bận muốn oder 1. cafe, 2. cam vắt, 3. nước ép cả rốt, 4. nước ép cà chua, 5. nước lọc, 6. nước dừa "));
+     let oder;
+     let tong = 0;
      do{
+         oder = parseInt(prompt(menu));
+         let soLuong = 0;
+         let gia = 0;
+         switch (oder){
+             case "1":
+                 gia = 10000;
+                 break;
+             case "2":
+                 gia = 10000;
+                 break;
+             case "3":
+                 gia = 15000;
+                 break;
+             case "4":
+                 gia = 15000;
+                 break;
+             case "5":
+                 gia = 10000;
+                 break;
+             case "6":
+                 gia = 10000;
+                 break;
+             case "7":
+                 continue;
+         }
+         soLuong = parseInt(prompt("nhap vao so luong do uong"));
+         tong += soLuong * gia;
+     } while (oder !== 7);
+     alert("tong so tuien nguoi dung phai tra la : " + tong);
 
-     }
-     while (menu < 7)
-    switch (menu < 7){
-        case "1":
-            result = 10000;
-            break;
-        case "2":
-            result = 10000;
-            break;
-        case "3":
-            result = 15000;
-            break;
-        case "4":
-            result = 15000;
-            break;
-        case "5":
-            result = 10000;
-            break;
-        case "6":
-            result = 10000;
-            break;
-    }
-     let soLuong = parseInt(prompt("số lương");
-     let tong = menu *soLuong;
+     // let tien = [10000,10000,15000,15000,20000,2000];
+     // let oder = ["cafe","cam vắt","nước ép catro","nước lọc","chanh dây","bí đao"];
+     // let soLuong = 0;
+     // let thanhTien = 0;
+     // let tong =0;
+     // let menu;
+     // do {
+     //     menu = parseInt(prompt("món cần oder"+"1.cafe"+"2.cam vắt"+"3.nước ép catro"+"4.nước lọc"+"5.Canh dây"+"6.Bí đao"));
+     //     if (  menu<= 6 && menu >= 1 ){
+     //         alert(oder[menu-1]+"gia tien:"+tien[menu-1]);
+     //         soLuong = prompt("nhap so luong");
+     //         thanhTien =soLuong*tien[menu-1];
+     //         alert("tong thanh toans la:"+ thanhTien);
+     //         tong += thanhTien;
+     //     }
+     // }while (menu !== 7);
+     // document.write("tong:"+tong);
+</script>
 
 
 </script>

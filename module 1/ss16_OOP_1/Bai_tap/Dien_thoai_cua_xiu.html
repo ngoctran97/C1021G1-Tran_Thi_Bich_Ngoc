@@ -15,52 +15,82 @@
             this.hopThuDen = [];
             this.hopThuDi = [];
         }
-        tatTat(){
-            if (this.trangThai == "bat"){
+        batTat() {
+
+            if (this.trangThai == "bat") {
                 console.log("dien thoai dang bat");
-            }else{
+                this.trangThai = "tat";
+            } else {
                 console.log("dien thoai dang tat");
+                this.trangThai = "bat";
             }
-        }xacDienThoai(){
+        }
+        xacDienThoai(){
             this.pin = 100;
             // console.log(this.name + " sau khi xac pin " + this.pin);
         }
         soanTinNhan(text){
+            if(this.trangThai == "tat" || this.pin <= 0) {
+                console.log(this.name +" dat tat " );
+                return;
+            }
             console.log(this.name +" da soan tin nhan " + text );
             this.tinNhan = text;
             this.pin--;
+            if(this.pin == 0) this.batTat();
             // console.log("pin : " + this.pin);
-        }nhanTinNhan(tinNhan){
+        }
+        nhanTinNhan(tinNhan){
+            if(this.trangThai == "tat" || this.pin <= 0) {
+                console.log(this.name +" dat tat " );
+                return;
+            }
             console.log(this.name + "da nhan 1 tin nhan la " + this.tinNhan);
             this.hopThuDen.push(tinNhan);
             this.pin--;
+            if(this.pin == 0) this.batTat();
             // console.log("pin : " + this.pin);
              console.log(this.hopThuDen);
         }
         guiTinNhan(dienThoaiKhac) {
+            if(this.trangThai == "tat" || this.pin <= 0) {
+                console.log(this.name +" dat tat " );
+                return;
+            }
             console.log(this.name + "da gui mot tin nhan cho " + dienThoaiKhac.name );
             // dienThoaiKhac.xemTinNhanDen();
             this.hopThuDi.push(this.tinNhan);
-            dienThoaiKhac.nhanTinNhan(this.tinNhan)
+            dienThoaiKhac.nhanTinNhan(this.tinNhan);
             this.tinNhan = "";
             this.pin--;
+            if(this.pin == 0) this.batTat();
             console.log("pin : " + this.pin);
         }
         xemTinNhanDen(){
-            console.log(this.name + " ca tin nhan da nhan la : " + this.hopThuDen);
+            if(this.trangThai == "tat" || this.pin <= 0) {
+                console.log(this.name +" dat tat " );
+                return;
+            }
+            console.log(this.name + " cac tin nhan da nhan la : " + this.hopThuDen);
             for (let i = 0; i < this.hopThuDen.length; i++){
                 console.log(i + " : " + this.hopThuDen[i]);
-                this.pin--;
-                console.log("pin : " + this.pin);
             }
+            this.pin--;
+            if(this.pin == 0) this.batTat();
+            console.log("pin : " + this.pin);
         }
         xemTinNhanDi(){
+            if(this.trangThai == "tat" || this.pin <= 0) {
+                console.log(this.name +" dat tat " );
+                return;
+            }
             console.log(this.name + " cac tin nhan da gui la : " + this.hopThuDi);
             for (let i = 0; i < this.hopThuDi.length; i++){
                 console.log(i + " : " + this.hopThuDi[i]);
-                this.pin--;
-                console.log("pin : " + this.pin);
             }
+            this.pin--;
+            if(this.pin == 0) this.batTat();
+            console.log("pin : " + this.pin);
         }
     }
     let iphone = new Mobile("iphone", "50", "bat");
@@ -69,6 +99,7 @@
     console.log(nokia);
     iphone.xacDienThoai();
     iphone.soanTinNhan("chao ban nokia");
+    iphone.soanTinNhan("chao chao");
     iphone.guiTinNhan(nokia);
     nokia.xemTinNhanDen();
     // nokia.nhanTinNhan();
