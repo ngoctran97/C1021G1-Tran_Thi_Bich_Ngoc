@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let luong = parseInt(prompt("nhap luong cua ban theo don vi trieu"));
+    let thue;
+    let luongnhan;
+    if( luong >= 15 ){
+        thue = luong * 0.2 ; // thue 20%
+        luongnhan = luong - thue;
+    }else if ( luong > 7 ){
+        thue = luong * 0.15 ; // thue 15%
+        luongnhan = luong - thue;
+    }else{
+        thue = luong * 0.1 ; // thue 15%
+        luongnhan = luong - thue;
+    }
+    alert (" số tiền thuế phải nộp trong " + luong + " triệu là : " + thue + " triệu và lương rong dược nhận là : " + luongnhan + " triệu ");
+</script>
+
+</body>
+</html>
