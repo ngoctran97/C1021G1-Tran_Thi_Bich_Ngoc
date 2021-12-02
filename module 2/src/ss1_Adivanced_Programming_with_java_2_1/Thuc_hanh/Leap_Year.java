@@ -22,13 +22,14 @@ public class Leap_Year {
             }else{
                 isLeapYear = true;
             }
-        }else {
-            if(isLeapYear){
-                System.out.printf("%d is a leap year", year);
-            }else{
-                System.out.printf("%d is Not a leap year", year);
-            }
         }
+
+        if(isLeapYear){
+            System.out.printf("%d is a leap year", year);
+        }else{
+            System.out.printf("%d is Not a leap year", year);
+        }
+
 
     }
 
