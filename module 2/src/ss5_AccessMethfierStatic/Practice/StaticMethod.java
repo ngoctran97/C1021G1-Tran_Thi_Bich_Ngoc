@@ -11,6 +11,30 @@ public class StaticMethod {
         name = n;
     }
 
+    public int getRollno() {
+        return rollno;
+    }
+
+    public void setRollno(int rollno) {
+        this.rollno = rollno;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public static String getCollege() {
+        return college;
+    }
+
+    public static void setCollege(String college) {
+        StaticMethod.college = college;
+    }
+
     static void change(){
         college = "CODEGYM";
     }

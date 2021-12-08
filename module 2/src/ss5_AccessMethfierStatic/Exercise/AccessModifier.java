@@ -3,24 +3,25 @@ package ss5_AccessMethfierStatic.Exercise;
 import java.util.Scanner;
 
 public class AccessModifier {
-    public double radius = 1.0;
-    public String color = "red";
-    public double area;
+    public double radius ;
+    public String color ;
 
     public AccessModifier(){
 
     }
-    public AccessModifier(double radius, double area){
-        this.area = area;
+
+    public AccessModifier(double radius, String color){
         this.radius = radius;
+        this.color = color;
     }
     public double getRadius(){
         return radius;
     }
-    public void setRadius(double radius){
+    public void setRadius(double radius) {
         this.radius = radius;
     }
     public String getColor(){
+
         return color;
     }
     public void setColor(String color){
