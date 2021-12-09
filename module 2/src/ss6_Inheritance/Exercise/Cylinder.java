@@ -1,7 +1,5 @@
 package ss6_Inheritance.Exercise;
 
-import java.util.Scanner;
-
 public class Cylinder extends Circle {
     public double height;
 
@@ -26,24 +24,28 @@ public class Cylinder extends Circle {
         this.height = height;
     }
     public double getArea(){
-        return radius * radius * Math.PI;
-    }
-    public double getPerimeter(){
-        return radius * 2 * Math.PI;
+        return super.getRadius() * super.getRadius() * Math.PI;
     }
     public double getVolume(){
-        return (radius * radius * Math.PI)*height;
+        return (super.getRadius() * super.getRadius() * Math.PI)*height;
     }
+
+//    @Override
+//    public String toString() {
+//        return "Cylinder{" +
+//                "color='" +  + '\'' +
+//                ", radius=" + radius +
+//                ", height=" + height +
+//                '}';
+//    }
+
 
     @Override
     public String toString() {
         return "Cylinder{" +
-                "color='" + color + '\'' +
-                ", radius=" + radius +
-                ", height=" + height +
+                "height=" + height +
                 '}';
     }
-
 
     public static void main(String[] args){
         Cylinder cylinder = new Cylinder("red", 1,5);
