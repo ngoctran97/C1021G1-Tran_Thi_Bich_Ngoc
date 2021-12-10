@@ -1,6 +1,8 @@
-package ss7_AbstractAndInterface.Exercise;
+package ss7_AbstractAndInterface.Exercise.Resizeable;
 
-public abstract class Shape implements Resizeable{
+import ss7_AbstractAndInterface.Exercise.Resizeable.Resizeable;
+
+public abstract class Shape implements Resizeable {
     private String color = "green";
     private boolean filled = true;
 
