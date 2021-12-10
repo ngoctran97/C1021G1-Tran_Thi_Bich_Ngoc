@@ -1,6 +1,6 @@
-package ss7_AbstractAndInterface.Exercise;
+package ss7_AbstractAndInterface.Exercise.Resizeable;
 
-public class Circle extends Shape implements Resizeable {
+public class Circle extends Shape {
     private double radius = 1.0;
 
     public Circle() {
@@ -59,4 +59,6 @@ public class Circle extends Shape implements Resizeable {
             circle.resize(10);
             System.out.println(circle);
         }
+
+
 }

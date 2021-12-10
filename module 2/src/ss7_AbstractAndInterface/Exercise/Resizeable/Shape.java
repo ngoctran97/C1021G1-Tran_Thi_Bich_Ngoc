@@ -1,15 +1,16 @@
-package ss7_AbstractAndInterface.Exercise.Colorable;
+package ss7_AbstractAndInterface.Exercise.Resizeable;
 
-import ss7_AbstractAndInterface.Exercise.Resizeable.Resizeable;
+import ss7_AbstractAndInterface.Exercise.Colorable.Colorable;
 
-public abstract class Shape implements Colorable {
+public abstract class Shape implements Resizeable {
     private String color = "green";
     private boolean filled = true;
 
-    public Shape(){
+    public Shape() {
 
     }
-    public Shape(String color, boolean filled){
+
+    public Shape(String color, boolean filled) {
         this.color = color;
         this.filled = filled;
     }
@@ -29,12 +30,14 @@ public abstract class Shape implements Colorable {
     public void setFilled(boolean filled) {
         this.filled = filled;
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         return "A Shape with color of "
                 + getColor()
                 + " and "
                 + (isFilled() ? "filled" : "not filled");
     }
+
 }
 

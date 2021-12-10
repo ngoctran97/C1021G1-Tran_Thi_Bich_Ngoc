@@ -1,6 +1,6 @@
-package ss6_Inheritance.Exercise;
+package ss6_Inheritance.Exercise.Point;
 
-public class MovablePoint extends Point{
+public class MovablePoint extends Point {
     public float xSpeed;
     public float ySpeed;
 

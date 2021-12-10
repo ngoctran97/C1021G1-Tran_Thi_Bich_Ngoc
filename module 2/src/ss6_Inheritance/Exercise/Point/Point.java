@@ -1,6 +1,4 @@
-package ss6_Inheritance.Exercise;
-
-import java.util.Scanner;
+package ss6_Inheritance.Exercise.Point;
 
 public class Point {
     public float x;

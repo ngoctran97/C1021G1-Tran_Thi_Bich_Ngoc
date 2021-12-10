@@ -1,6 +1,4 @@
-package ss7_AbstractAndInterface.Exercise.Resizeable;
-
-import ss7_AbstractAndInterface.Exercise.Colorable.Shape;
+package ss7_AbstractAndInterface.Exercise.Colorable;
 
 public class Square extends Shape {
     private double side = 2.0;
@@ -37,10 +35,18 @@ public class Square extends Shape {
                 '}';
     }
 
+
     @Override
-    public void resize(double percent) {
-        this.side = this.side *(percent/100);
+    public void HowToColor() {
+        System.out.println("red");
+    }
+
+    public static void main(String[] args) {
+        Square square = new Square();
+        System.out.println(square);
+        square.HowToColor();
+        System.out.println(square);
+
 
     }
-    
 }

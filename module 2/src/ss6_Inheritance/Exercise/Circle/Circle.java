@@ -1,4 +1,4 @@
-package ss6_Inheritance.Exercise;
+package ss6_Inheritance.Exercise.Circle;
 
 import ss6_Inheritance.Practice.Shape;
 

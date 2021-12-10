@@ -1,4 +1,4 @@
-package ss7_AbstractAndInterface.Exercise;
+package ss7_AbstractAndInterface.Exercise.Resizeable;
 
 public class Rectangle extends Shape {
     private double width = 1.0;
@@ -66,18 +66,4 @@ public class Rectangle extends Shape {
         rectangle.resize(10);
         System.out.println(rectangle);
     }
-
-
-
-// RectangleTest
-//        public static void main(String[] args) {
-//            Rectangle rectangle = new Rectangle();
-//            System.out.println(rectangle);
-//
-//            rectangle = new Rectangle(2.3, 5.8);
-//            System.out.println(rectangle);
-//
-//            rectangle = new Rectangle(2.5, 3.8, "orange", true);
-//            System.out.println(rectangle);
-//        }
 }

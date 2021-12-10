@@ -1,6 +1,6 @@
 package ss7_AbstractAndInterface.practice;
 
-import ss6_Inheritance.Exercise.Circle;
+import ss6_Inheritance.Exercise.Circle.Circle;
 
 import java.util.Arrays;
 import java.util.Comparator;

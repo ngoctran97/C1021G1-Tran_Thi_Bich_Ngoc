@@ -1,7 +1,5 @@
 package ss7_AbstractAndInterface.Exercise.Resizeable;
 
-import ss7_AbstractAndInterface.Exercise.Resizeable.Shape;
-
 public class Square extends Shape {
     private double side = 2.0;
 
@@ -10,12 +8,12 @@ public class Square extends Shape {
     }
 
     public Square(double side) {
-      this.side = side;
+        this.side = side;
 
     }
 
     public Square(double side, String color, boolean filled) {
-        super( color, filled);
+        super(color, filled);
         this.side = side;
     }
 
@@ -26,8 +24,9 @@ public class Square extends Shape {
     public void setSide(double side) {
         this.side = side;
     }
+
     public double getArea() {
-        return side* side;
+        return side * side;
     }
 
     @Override
@@ -39,8 +38,16 @@ public class Square extends Shape {
 
     @Override
     public void resize(double percent) {
-        this.side = this.side *(percent/100);
+        this.side = this.side * (percent / 100);
+
 
     }
-    
+
+    public static void main(String[] args) {
+        Square square = new Square();
+        System.out.println(square);
+        square.resize(5);
+        System.out.println(square);
+
+    }
 }
