@@ -12,19 +12,15 @@ public class TennisGame {
             {
                 case 0:
                     return "Love-All";
-                    break;
+
                 case 1:
                     return "Fifteen-All";
-                    break;
                 case 2:
                     return  "Thirty-All";
-                    break;
                 case 3:
                     return  "Forty-All";
-                    break;
                 default:
                     return  "Deuce";
-                    break;
 
             }
 
@@ -41,26 +37,22 @@ public class TennisGame {
                 for (int i=1; i<3; i++)
                 {
                     if (i==1) tempScore = playSore1;
-                    else { return"-"; tempScore = phayScore2;}
+                    else { tempScore = phayScore2;}
                     switch(tempScore)
                     {
                         case 0:
                             return"Love";
-                            break;
                         case 1:
                             return"Fifteen";
-                            break;
                         case 2:
                             return"Thirty";
-                            break;
                         case 3:
                             return"Forty";
-                            break;
                     }
                 }
             }
 
-        return ;
+        return "";
     }
 
 }

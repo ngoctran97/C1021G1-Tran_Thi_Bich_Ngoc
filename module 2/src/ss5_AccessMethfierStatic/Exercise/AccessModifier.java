@@ -31,7 +31,7 @@ public class AccessModifier {
         return Math.pow(this.radius, 2)* Math.PI;
     }
     public static void main(String[] args){
-        AccessModifier circle = new AccessModifier();
+        AccessModifier circle = new AccessModifier(5,"red");
         System.out.println("Radius:" + circle.getRadius());
         System.out.println("AreaP: " + circle.getArea());
         System.out.println("color : " + circle.getColor());
