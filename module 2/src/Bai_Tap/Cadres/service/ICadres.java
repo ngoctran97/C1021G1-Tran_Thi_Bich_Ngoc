@@ -1,5 +1,8 @@
 package Bai_Tap.Cadres.service;
 
-public interface Cadres {
+public interface ICadres {
 
+    void addNewCadres();
+
+    void getAll();
 }
