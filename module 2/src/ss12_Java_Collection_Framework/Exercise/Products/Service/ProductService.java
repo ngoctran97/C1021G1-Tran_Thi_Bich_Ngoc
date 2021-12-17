@@ -12,14 +12,12 @@ public class ProductService implements IProduct {
 
     @Override
     public void addNewProduct() {
-        System.out.println("Nhap id");
-        int id = Integer.parseInt(scanner.nextLine());
         System.out.println("Nhap ten san pham");
         String name = scanner.nextLine();
         System.out.println("Nhap gia san pham");
         double prices = Double.parseDouble(scanner.nextLine());
 
-        Product product = new Product(id, name, prices);
+        Product product = new Product( name, prices);
         productList.add(product);
     }
 
@@ -77,31 +75,41 @@ public class ProductService implements IProduct {
         System.out.println("nhap san pham can tim");
         String strProduct = scanner.nextLine();
         boolean check = false;
+        ArrayList<Product> arrayList = new ArrayList<>();
+        int index = 0;
         for (int i = 0; i < productList.size(); i++) {
-            if (strProduct.equals(productList.get(i).getName())) {
-                System.out.println(strProduct);
+            check = false;
+            if (productList.get(i).getName().contains(strProduct)) {
                 check = true;
-                break;
-            }
-            if (check == false) {
-                System.out.println("hong co san pham nay trong danh sach");
+                arrayList.add(productList.get(i));
+                index = i;
             }
         }
+        if (check ) {
+            for (Product product : arrayList){
+                    System.out.println(product);
+            }
+        }else{
+                System.out.println("hong co san pham nay trong danh sach");
+        }
+
+    }
+
+    @Override
+    public void increase() {
+        Collections.sort(productList);
         for (Product product : productList) {
             System.out.println(product);
         }
     }
 
     @Override
-    public void increase() {
-        Collections.sort(productList);;
-
-    }
-
-    @Override
     public void decrease() {
         Product newProduct = new Product();
         Collections.sort(productList, newProduct);
+        for (Product product : productList) {
+            System.out.println(product);
+        }
     }
 
 
