@@ -2,15 +2,15 @@ package CaseStudy.Task1.modell.Facility;
 
 public abstract class Facility {
     public String serviceName; // teen dich vu
-    public double usableArea; // dien tich su dung
-    public double rentalCosts; // chi phis thue
-    public double maxPeople; // so luong nguoi toi da
+    public int usableArea; // dien tich su dung
+    public int rentalCosts; // chi phis thue
+    public int maxPeople; // so luong nguoi toi da
     public String rentalType; // kieu thue
 
     public Facility() {
     }
 
-    public Facility(String serviceName, double usableArea, double rentalCosts, double maxPeople, String rentalType) {
+    public Facility(String serviceName, int usableArea, int rentalCosts, int maxPeople, String rentalType) {
         this.serviceName = serviceName;
         this.usableArea = usableArea;
         this.rentalCosts = rentalCosts;
@@ -30,7 +30,7 @@ public abstract class Facility {
         return usableArea;
     }
 
-    public void setUsableArea(double usableArea) {
+    public void setUsableArea(int usableArea) {
         this.usableArea = usableArea;
     }
 
@@ -38,7 +38,7 @@ public abstract class Facility {
         return rentalCosts;
     }
 
-    public void setRentalCosts(double rentalCosts) {
+    public void setRentalCosts(int rentalCosts) {
         this.rentalCosts = rentalCosts;
     }
 
@@ -46,7 +46,7 @@ public abstract class Facility {
         return maxPeople;
     }
 
-    public void setMaxPeople(double maxPeople) {
+    public void setMaxPeople(int maxPeople) {
         this.maxPeople = maxPeople;
     }
 

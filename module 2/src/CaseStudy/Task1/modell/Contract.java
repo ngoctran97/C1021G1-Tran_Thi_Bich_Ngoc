@@ -1,4 +1,6 @@
 package CaseStudy.Task1.modell;
 
-public class Contract {
+import CaseStudy.Task1.modell.Person.Person;
+
+public class Contract extends Person {
 }
