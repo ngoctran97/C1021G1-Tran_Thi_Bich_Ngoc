@@ -3,32 +3,21 @@ package ss13_Searching_Algorithms.Exercise.Main;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class Main {
-
+public class Ascending {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         System.out.println("nhap chuoi");
-        String string = input.nextLine();
+        String str = scanner.nextLine();
 
-        LinkedList<Character> max = new LinkedList<>();
-        for (int i = 0; i < string.length(); i++){
-            LinkedList<Character> list = new LinkedList<>();
-            list.add(string.charAt(i));
-            for (int j = i + 1; j < string.length(); j++) {
-                if(string.charAt(j)> list.getLast()){
-                    list.add(string.charAt(j));
-                }
+        int code = (int) str.charAt(0);
+        for (int i = 0; i < str.length();i++){
+            int code2 = (int) str.charAt(i);
+            if(code <= code2){
+                code = code2;
+                System.out.print(str.charAt(i));
             }
-            if(list.size() > max.size()){
-                max.clear();
-                max.addAll(list);
-            }
-            list.clear();
         }
-        for (Character ch: max){
-            System.out.print(ch);
-        }
-        System.out.println();
     }
+
 }

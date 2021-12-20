@@ -4,6 +4,7 @@ import ss12_Java_Collection_Framework.Exercise.Products.model.Product;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class ProductService implements IProduct {
@@ -74,25 +75,20 @@ public class ProductService implements IProduct {
     public void searchProduct() {
         System.out.println("nhap san pham can tim");
         String strProduct = scanner.nextLine();
-        boolean check = false;
-        ArrayList<Product> arrayList = new ArrayList<>();
-        int index = 0;
-        for (int i = 0; i < productList.size(); i++) {
-            check = false;
-            if (productList.get(i).getName().contains(strProduct)) {
-                check = true;
-                arrayList.add(productList.get(i));
-                index = i;
-            }
-        }
-        if (check ) {
-            for (Product product : arrayList){
-                    System.out.println(product);
-            }
-        }else{
-                System.out.println("hong co san pham nay trong danh sach");
-        }
 
+        ArrayList<Product> arrayList = new ArrayList<>();
+        for (int i = 0; i < productList.size(); i++) {
+            if (productList.get(i).getName().toLowerCase().contains(strProduct.toLowerCase())) {
+                arrayList.add(productList.get(i));
+            }
+        }
+        if(arrayList.size() == 0){
+            System.out.println("khong co san pham");
+        }else{
+            for (Product product: arrayList){
+                System.out.println(product);
+            }
+        }
     }
 
     @Override

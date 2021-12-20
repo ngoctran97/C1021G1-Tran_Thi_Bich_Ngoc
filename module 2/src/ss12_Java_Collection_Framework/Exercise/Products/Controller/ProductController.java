@@ -5,7 +5,7 @@ import ss12_Java_Collection_Framework.Exercise.Products.Service.ProductService;
 
 import java.util.Scanner;
 
-public class ProductManager {
+public class ProductController {
     public static void main(String[] args) {
         IProduct iProduct = new ProductService();
         Scanner scanner = new Scanner(System.in);
@@ -42,9 +42,6 @@ public class ProductManager {
                     break;
                 case 7:
                     iProduct.decrease();
-                    break;
-                case 0:
-                    System.exit(0);
                     break;
             }
         }while (true);

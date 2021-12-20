@@ -3,19 +3,14 @@ package ss10_LinkedList.Exercise.MyList;
 import java.util.Arrays;
 
 public class ArrayList<E>{
-        //số phần tử trong mảng list (Default = 0)
         private int size = 0;
-        //Sức chứa default của mảng list
         private static final int Default_Capacity = 10;
-
         Object elements [];
 
-        //contractor ko tham số sức chứa mặc định
         public ArrayList() {
             elements = new Object[Default_Capacity];
         }
 
-        //contractor có tham số suc chứa đc truyền vào
         public ArrayList(int capacity) {
             if(capacity>=0) {
                 elements = new Object[capacity];
