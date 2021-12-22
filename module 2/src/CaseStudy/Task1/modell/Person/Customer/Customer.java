@@ -50,8 +50,8 @@ public class Customer extends Person {
     @Override
     public String toString() {
         return "Customer{" +
-                super.toString()+
                 "mkh='" + mkh + '\'' +
+                super.toString()+
                 ", typeOfGuest='" + typeOfGuest + '\'' +
                 ", address='" + address + '\'' +
                 '}';
