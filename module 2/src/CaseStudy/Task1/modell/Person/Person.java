@@ -1,6 +1,7 @@
 package CaseStudy.Task1.modell.Person;
 
 public abstract class Person {
+    private int id;
     private String name; // ho va ten
     private String birth; // ngay thang nam sinh
     private String gender; // goi tinh
@@ -11,13 +12,23 @@ public abstract class Person {
     public Person() {
     }
 
-    public Person(String name, String birth, String gender, String cmnn, String phone, String email) {
+    public Person(int id, String name, String birth, String gender, String cmnn, String phone, String email) {
+        this.id = id;
         this.name = name;
         this.birth = birth;
         this.gender = gender;
         this.cmnn = cmnn;
         this.phone = phone;
         this.email = email;
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -28,7 +39,7 @@ public abstract class Person {
         this.name = name;
     }
 
-    public String getBirth() {
+    public String getBirth(String editbirth) {
         return birth;
     }
 
@@ -70,13 +81,12 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
+        return "id=" + id +
+                ", name='" + name + '\'' +
                 ", birth='" + birth + '\'' +
                 ", gender='" + gender + '\'' +
                 ", cmnn='" + cmnn + '\'' +
                 ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+                ", email='" + email + '\'';
     }
 }
