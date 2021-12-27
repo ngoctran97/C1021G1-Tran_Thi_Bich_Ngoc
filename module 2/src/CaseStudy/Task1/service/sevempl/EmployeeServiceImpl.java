@@ -30,11 +30,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         System.out.println("input name");
         String name = scanner.nextLine();
-       // String birth;
-       // do {
+        String birth;
+        do {
             System.out.println("input birth");
-            String birth = scanner.nextLine();
-        //}while (!Pattern.matches("^(0[1-9]|1[0-9]|2[0-8])[\\/](0[1-9]|1[0-9])"));
+            birth = scanner.nextLine();
+        }while (!Pattern.matches("(((0[1-9]|[12][0-9]|30)[-\\/](0[13-9]|1[012])|31[-\\/](0[13578]|1[02])|(0[1-9]|1[0-9]|2[0-8])[-\\/]02)" +
+        "[-\\/](19[0-9]{2}|200[012])|29[-\\/]02[-\\/]" +
+        "([0-9]{2}(([2468][048]|[02468][48])|[13579][26])|([13579][26]|[02468][048]|0[0-9]|1[0-6])00))$",birth));
+
 
 
         System.out.println("input gebder");
@@ -158,19 +161,25 @@ public class EmployeeServiceImpl implements EmployeeService {
                             employeeList.get(i).setGender(editgender);
                             break;
                         case 4:
-                            System.out.println("input new numberID");
-                            String editcmnn = scanner.nextLine();
-                            employeeList.get(i).setCmnn(editcmnn);
+                            String cmnn;
+                            do {
+                                System.out.println("input numberID");
+                                cmnn = scanner.nextLine();
+                            } while (!Pattern.matches("^[0-9]{9}$", cmnn));
                             break;
                         case 5:
-                            System.out.println("input new phone number");
-                            String editsdt = scanner.nextLine();
-                            employeeList.get(i).setPhone(editsdt);
+                            String sdt;
+                            do {
+                                System.out.println("input phone");
+                                sdt = scanner.nextLine();
+                            } while (!Pattern.matches("^0[0-9]{9}", sdt));
                             break;
                         case 6:
-                            System.out.println("input new email");
-                            String editemail = scanner.nextLine();
-                            employeeList.get(i).setEmail(editemail);
+                            String emaile;
+                            do {
+                                System.out.println("input Emaile");
+                                emaile = scanner.nextLine();
+                            } while (!Pattern.matches("^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)$", emaile));
                             break;
                         case 7:
                             System.out.println("input new lever");
