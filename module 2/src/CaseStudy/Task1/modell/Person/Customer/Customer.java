@@ -11,8 +11,8 @@ public class Customer extends Person {
         this.address = address;
     }
 
-    public Customer(int id, String name, String birth, String gender, String cmnn, String phone, String email, String typeOfGuest, String address) {
-        super(id, name, birth, gender, cmnn, phone, email);
+    public Customer(String name, String birth, String gender, String cmnn, String phone, String email, String typeOfGuest, String address) {
+        super( name, birth, gender, cmnn, phone, email);
         this.typeOfGuest = typeOfGuest;
         this.address = address;
     }
@@ -40,5 +40,15 @@ public class Customer extends Person {
                 "typeOfGuest='" + typeOfGuest + '\'' +
                 ", address='" + address + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        return 0;
+    }
+
+    @Override
+    public int compare(Person o1, Person o2) {
+        return 0;
     }
 }

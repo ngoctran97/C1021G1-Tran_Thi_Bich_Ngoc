@@ -5,20 +5,23 @@ import CaseStudy.Task1.modell.Person.Person;
 public class Employee extends Person {
     private String lever; // trinh do
     private String position; // vi tri
-    private String wage; // luong
+    private int wage; // luong
 
-    public Employee(String lever, String position, String wage) {
+    public Employee(String lever, String position, int wage) {
         this.lever = lever;
         this.position = position;
         this.wage = wage;
     }
 
-    public Employee(int id, String name, String birth, String gender, String cmnn, String phone, String email, String lever, String position, String wage) {
-        super(id, name, birth, gender, cmnn, phone, email);
+    public Employee(String name, String birth, String gender, String cmnn, String phone, String email, String lever, String position, int wage) {
+        super(name, birth, gender, cmnn, phone, email);
         this.lever = lever;
         this.position = position;
         this.wage = wage;
     }
+
+//    public Employee(int id, String name, String birth, String gender, String cmnn, String sdt, String emaile, String level, String position, int wage) {
+//    }
 
     public String getLever() {
         return lever;
@@ -36,11 +39,11 @@ public class Employee extends Person {
         this.position = position;
     }
 
-    public String getWage() {
+    public int getWage() {
         return wage;
     }
 
-    public void setWage(String wage) {
+    public void setWage(int wage) {
         this.wage = wage;
     }
 
@@ -52,5 +55,15 @@ public class Employee extends Person {
                 ", position='" + position + '\'' +
                 ", wage='" + wage + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        return 0;
+    }
+
+    @Override
+    public int compare(Person o1, Person o2) {
+        return 0;
     }
 }

@@ -3,9 +3,12 @@ package CaseStudy.Task1.service.sevempl;
 import CaseStudy.Task1.modell.Person.Employee.Employee;
 import CaseStudy.Task1.service.EmployeeService;
 import CaseStudy.Task1.service.Service;
+import ss15_Debug.Exercise.IllegalTriangleException;
 
 
+import java.io.*;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -13,6 +16,59 @@ import java.util.regex.Pattern;
 public class EmployeeServiceImpl implements EmployeeService {
     private static List<Employee> employeeList = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
+    static  int id = 1;
+
+    public void createEmloyeeFormFile(String path) {
+//        try {
+//        // Mo file
+//        FileInputStream fstream = new FileInputStream(path);
+//        BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
+//
+//        String strLine;
+//        boolean readheader = true;
+//
+//        //doc tung dong mot tu file
+//
+//        while ((strLine = br.readLine()) != null)   {
+//            //bo qua, khong doc cac ten code (header)
+//            if(readheader) {
+//                readheader = false;
+//                continue;
+//            }
+//            // in du lieu ra man hinh
+//            System.out.println (strLine);
+//
+//            //Chuyen du lieu thanh mot mang
+//            String data[] = strLine.split(",");
+//            // tao employee tu mang
+//            Employee employee = new Employee(id, data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9]);
+//            id++;
+//            //them employee vao danh dach
+//            employeeList.add(employee);
+//
+//
+//        }
+//
+//        //dong file
+//        fstream.close();
+//        }
+//        catch  (IOException e) {
+//
+//        }
+    }
+    public void write(){
+        try {
+            FileWriter fileWriter = new FileWriter("/Users/tranvantrong/Documents/C1021G1-Tran_Thi_Bich_Ngoc/module 2/src/CaseStudy/Task1/data/employee.csv");
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            for (Employee employee: employeeList){
+                bufferedWriter.write(employee.getId()+ ","+employee.getName()+"," + employee.getBirth()+","+employee.getGender()+","+employee.getCmnn()+","
+                        +employee.getPhone()+","+employee.getEmail()+","+employee.getLever()+","+employee.getPosition()+","+employee.getWage()+"\n");
+            }
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public void displayListEmployees() {
@@ -24,9 +80,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void addNewEmployee() {
-        System.out.println("input id");
-        int id = scanner.nextInt();
-        scanner.nextLine();
+//        System.out.println("input id");
+//        int id = scanner.nextInt();
+//        scanner.nextLine();
 
         System.out.println("input name");
         String name = scanner.nextLine();
@@ -34,14 +90,27 @@ public class EmployeeServiceImpl implements EmployeeService {
         do {
             System.out.println("input birth");
             birth = scanner.nextLine();
-        }while (!Pattern.matches("(((0[1-9]|[12][0-9]|30)[-\\/](0[13-9]|1[012])|31[-\\/](0[13578]|1[02])|(0[1-9]|1[0-9]|2[0-8])[-\\/]02)" +
-        "[-\\/](19[0-9]{2}|200[012])|29[-\\/]02[-\\/]" +
-        "([0-9]{2}(([2468][048]|[02468][48])|[13579][26])|([13579][26]|[02468][048]|0[0-9]|1[0-6])00))$",birth));
+        } while (!Pattern.matches("(((0[1-9]|[12][0-9]|30)[-\\/](0[13-9]|1[012])|31[-\\/](0[13578]|1[02])|(0[1-9]|1[0-9]|2[0-8])[-\\/]02)" +
+                "[-\\/](19[0-9]{2}|200[012])|29[-\\/]02[-\\/]" +
+                "([0-9]{2}(([2468][048]|[02468][48])|[13579][26])|([13579][26]|[02468][048]|0[0-9]|1[0-6])00))$", birth));
 
 
-
-        System.out.println("input gebder");
-        String gender = scanner.nextLine();
+        System.out.println("1.Nam");
+        System.out.println("2.Nữ");
+        System.out.println("3.Khac");
+        String gender = " ";
+        int choose = Integer.parseInt(scanner.nextLine());
+        switch (choose) {
+            case 1:
+                gender = "Nam";
+                break;
+            case 2:
+                gender = "Nữ";
+                break;
+            case 3:
+                gender = "Khac";
+                break;
+        }
 
         String cmnn;
         do {
@@ -67,8 +136,8 @@ public class EmployeeServiceImpl implements EmployeeService {
         System.out.println("3. Dai hoc");
         System.out.println("3. Sau dai hoc");
         String level = "";
-        int choose = Integer.parseInt(scanner.nextLine());
-        switch (choose) {
+        int choose1 = Integer.parseInt(scanner.nextLine());
+        switch (choose1) {
             case 1:
                 level = "Trung cap";
                 break;
@@ -114,11 +183,25 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
 
         System.out.println("nhap luong");
-        String wage = scanner.nextLine();
+        int wage;
+        do {
+            try {
+                wage = scanner.nextInt();
+                if(wage < 0)
+                    System.out.println("nhap lai luong");
+            } catch (Exception e) {
+                System.out.println("nhap khong dung "+e.getMessage());
+                scanner.nextLine();
+                wage = -1 ;
+            }
+        }while (wage < 0);
 
-        Employee employee = new Employee(id, name, birth, gender, cmnn, sdt, emaile, level, position, wage);
+
+
+
+        Employee employee = new Employee(name, birth, gender, cmnn, sdt, emaile, level, position, wage);
         employeeList.add(employee);
-
+        write();
 
     }
 
@@ -193,7 +276,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                             break;
                         case 9:
                             System.out.println("input new wage");
-                            String editwage = scanner.nextLine();
+                            int editwage = scanner.nextInt();
                             employeeList.get(i).setWage(editwage);
                             break;
                         case 10:

@@ -18,7 +18,7 @@ public class ProductService implements IProduct {
         System.out.println("Nhap gia san pham");
         double prices = Double.parseDouble(scanner.nextLine());
 
-        Product product = new Product( name, prices);
+        Product product = new Product(name, prices);
         productList.add(product);
     }
 

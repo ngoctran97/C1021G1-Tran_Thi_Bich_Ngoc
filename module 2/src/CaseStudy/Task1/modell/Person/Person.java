@@ -1,6 +1,8 @@
 package CaseStudy.Task1.modell.Person;
 
-public abstract class Person {
+import java.util.Comparator;
+
+public abstract class Person implements Comparable<Person>, Comparator<Person> {
     private int id;
     private String name; // ho va ten
     private String birth; // ngay thang nam sinh
@@ -8,12 +10,14 @@ public abstract class Person {
     private String cmnn; // cmnn
     private String phone; // sdt
     private String email; // email
+    static int personid;
 
     public Person() {
     }
 
-    public Person(int id, String name, String birth, String gender, String cmnn, String phone, String email) {
-        this.id = id;
+    public Person(String name, String birth, String gender, String cmnn, String phone, String email) {
+        personid++;
+        this.id = personid;
         this.name = name;
         this.birth = birth;
         this.gender = gender;
@@ -27,9 +31,6 @@ public abstract class Person {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -39,7 +40,7 @@ public abstract class Person {
         this.name = name;
     }
 
-    public String getBirth(String editbirth) {
+    public String getBirth() {
         return birth;
     }
 

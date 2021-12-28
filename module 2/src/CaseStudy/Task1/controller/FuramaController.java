@@ -62,7 +62,8 @@ public class FuramaController {
             System.out.println("1.Display list employees");
             System.out.println("2.Add new employee");
             System.out.println("3.Edit employee");
-            System.out.println("4.Return main menu");
+            System.out.println("4.create employee from file emloyee.csv");
+            System.out.println("5.Return main menu");
             Scanner scanner = new Scanner(System.in);
             try {
                 choose = Integer.parseInt(scanner.nextLine());
@@ -80,6 +81,9 @@ public class FuramaController {
                     employeeService.editEmployee();
                     break;
                 case 4:
+                    employeeService.createEmloyeeFormFile("/Users/tranvantrong/Documents/C1021G1-Tran_Thi_Bich_Ngoc/module 2/src/CaseStudy/Task1/data/employee.csv");
+                    break;
+                case 5:
                     check = false;
                     break;
             }
@@ -144,6 +148,7 @@ public class FuramaController {
                     break;
                 case 3:
                     facilityService.displayMaintain();
+                    break;
                 case 4:
                     check = false;
                     break;
