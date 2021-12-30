@@ -19,47 +19,48 @@ public class EmployeeServiceImpl implements EmployeeService {
     static  int id = 1;
 
     public void createEmloyeeFormFile(String path) {
-//        try {
-//        // Mo file
-//        FileInputStream fstream = new FileInputStream(path);
-//        BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
-//
-//        String strLine;
-//        boolean readheader = true;
-//
-//        //doc tung dong mot tu file
-//
-//        while ((strLine = br.readLine()) != null)   {
-//            //bo qua, khong doc cac ten code (header)
-//            if(readheader) {
-//                readheader = false;
-//                continue;
-//            }
-//            // in du lieu ra man hinh
-//            System.out.println (strLine);
-//
-//            //Chuyen du lieu thanh mot mang
-//            String data[] = strLine.split(",");
-//            // tao employee tu mang
-//            Employee employee = new Employee(id, data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9]);
-//            id++;
-//            //them employee vao danh dach
-//            employeeList.add(employee);
-//
-//
-//        }
-//
-//        //dong file
-//        fstream.close();
-//        }
-//        catch  (IOException e) {
-//
-//        }
+        try {
+        // Mo file
+        FileInputStream fstream = new FileInputStream(path);
+        BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
+
+        String strLine;
+        boolean readheader = true;
+
+        //doc tung dong mot tu file
+
+        while ((strLine = br.readLine()) != null)   {
+            //bo qua, khong doc cac ten code (header)
+            if(readheader) {
+                readheader = false;
+                continue;
+            }
+            // in du lieu ra man hinh
+            System.out.println (strLine);
+
+            //Chuyen du lieu thanh mot mang
+            String data[] = strLine.split(",");
+            // tao employee tu mang
+            Employee employee = new Employee( data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], Integer.parseInt(data[9]));
+            id++;
+            //them employee vao danh dach
+            employeeList.add(employee);
+
+
+        }
+
+        //dong file
+        fstream.close();
+        }
+        catch  (IOException e) {
+
+        }
     }
     public void write(){
         try {
             FileWriter fileWriter = new FileWriter("/Users/tranvantrong/Documents/C1021G1-Tran_Thi_Bich_Ngoc/module 2/src/CaseStudy/Task1/data/employee.csv");
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+
             for (Employee employee: employeeList){
                 bufferedWriter.write(employee.getId()+ ","+employee.getName()+"," + employee.getBirth()+","+employee.getGender()+","+employee.getCmnn()+","
                         +employee.getPhone()+","+employee.getEmail()+","+employee.getLever()+","+employee.getPosition()+","+employee.getWage()+"\n");
@@ -70,11 +71,13 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
     }
 
+
     @Override
     public void displayListEmployees() {
         for (Employee employee : employeeList) {
             System.out.println(employee.toString());
         }
+
 
     }
 

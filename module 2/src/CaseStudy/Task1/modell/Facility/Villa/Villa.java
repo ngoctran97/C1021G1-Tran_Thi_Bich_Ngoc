@@ -7,10 +7,13 @@ public class Villa extends Facility {
     public int poolArea ; // dien tich ho boi
     public int numberfloors; // so tang
 
-    public Villa(String roomStandard, int poolArea, int numberfloors) {
-        this.roomStandard = roomStandard;
-        this.poolArea = poolArea;
-        this.numberfloors = numberfloors;
+//    public Villa(String roomStandard, int poolArea, int numberfloors) {
+//        this.roomStandard = roomStandard;
+//        this.poolArea = poolArea;
+//        this.numberfloors = numberfloors;
+//    }
+
+    public Villa() {
     }
 
     public Villa(String id, String serviceName, int usableArea, int rentalCosts, int maxPeople, String rentalType, String roomStandard, int poolArea, int numberfloors) {

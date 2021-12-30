@@ -1,8 +1,13 @@
 package ss16_IO_Text_File.Exercise.FileCSV;
 
+import ss22_Structural_Design_Pattern.Practice.FileWorker.Client;
+import ss22_Structural_Design_Pattern.Practice.FileWorker.FileCalculator;
+import ss22_Structural_Design_Pattern.Practice.FileWorker.FileCalculatorAdapter;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class FileUtil {
 
@@ -42,10 +47,14 @@ public class FileUtil {
         }
     }
 
-    public static void main(String[] args) {
-        List<Nation> nationList = readCSV();
-        for (Nation nation : nationList){
-            System.out.println(nation);
-        }
+    public static <canner> void main(String[] args) {
+        canner scanner = (canner) new Scanner(System.in);
+        System.out.println("Enter file or folder path: ");
+        String path = ((Scanner) scanner).nextLine();
+        FileCalculator fileCalculator = new FileCalculatorAdapter();
+        Client client = new Client(fileCalculator);
+        client.printFileSize(path);
     }
+
+
 }
