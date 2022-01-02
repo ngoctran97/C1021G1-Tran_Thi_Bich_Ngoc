@@ -4,12 +4,11 @@ import CaseStudy.Task1.modell.Facility.Facility;
 import CaseStudy.Task1.modell.Facility.House.House;
 import CaseStudy.Task1.modell.Facility.Room.Room;
 import CaseStudy.Task1.modell.Facility.Villa.Villa;
+import CaseStudy.Task1.modell.Person.Employee.Employee;
 import CaseStudy.Task1.service.FacilityService;
 import ss19_String.Exercise.ValidateExample.ValidateExample;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -59,6 +58,58 @@ public class FacilityServiceImpl implements FacilityService {
             e.printStackTrace();
         }
     }
+    public void readVilla(String path){
+        try {
+            FileInputStream fileInputStream = new FileInputStream("/Users/tranvantrong/Documents/C1021G1-Tran_Thi_Bich_Ngoc/module 2/src/CaseStudy/Task1/data/villa.csv");
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream));
+
+            String strLine;
+            boolean readVilla = true;
+
+            while ((strLine = bufferedReader.readLine())!= null){
+                if(readVilla){
+                    readVilla = false;
+                    continue;
+                }
+            }
+            String data[] = strLine.split(",");
+            Villa villa = new Villa(data[0],data[1],Integer.parseInt(data[2]),Integer.parseInt(data[3]),
+                    Integer.parseInt(data[4]),data[5],data[6],Integer.parseInt(data[7]),Integer.parseInt(data[8]) );
+            facilityIntegerMap.put(villa,0);
+            fileInputStream.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void readHouse(String path){
+        try {
+            FileInputStream fileInputStream = new FileInputStream("/Users/tranvantrong/Documents/C1021G1-Tran_Thi_Bich_Ngoc/module 2/src/CaseStudy/Task1/data/house.csv");
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream));
+
+            String strLine;
+            boolean readHouse = true;
+
+            while ((strLine = bufferedReader.readLine())!= null){
+                if(readHouse){
+                    readHouse = false;
+                    continue;
+                }
+                String data[] = strLine.split(",");
+                House house = new House(data[0],data[1],Integer.parseInt(data[2]),Integer.parseInt(data[3]),
+                        Integer.parseInt(data[4]),data[5],data[6],Integer.parseInt(data[7]) );
+            }
+            fileInputStream.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
     @Override
     public void displayMaintain() {
 
@@ -67,7 +118,6 @@ public class FacilityServiceImpl implements FacilityService {
     public void addNewVilla() {
         System.out.println("input id");
         String id=scanner.nextLine();
-
         while (!(id.matches("[S][V][V][L][-][0-9]{4}"))) {
             System.out.println("Input is invalid!");
             System.out.println("Enter the ID:");

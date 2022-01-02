@@ -20,7 +20,7 @@ public class CustomerServiceImpl implements CustomerService {
             FileWriter fileWriter = new FileWriter("/Users/tranvantrong/Documents/C1021G1-Tran_Thi_Bich_Ngoc/module 2/src/CaseStudy/Task1/data/customer.csv");
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             for (Customer customer : customerList){
-                bufferedWriter.write(customer.getId()+","+customer.getName()+","+customer.getGender()+","+customer.getCmnn()+","+customer.getPhone()
+                bufferedWriter.write(customer.getId()+","+customer.getName()+","+customer.getBirth()+","+customer.getGender()+","+customer.getCmnn()+","+customer.getPhone()
                         +","+customer.getEmail()+","+customer.getTypeOfGuest()+","+customer.getAddress()+"\n");
 
             }

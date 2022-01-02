@@ -11,10 +11,16 @@ public class Customer extends Person {
         this.address = address;
     }
 
+    public Customer() {
+    }
+
     public Customer(String name, String birth, String gender, String cmnn, String phone, String email, String typeOfGuest, String address) {
         super( name, birth, gender, cmnn, phone, email);
         this.typeOfGuest = typeOfGuest;
         this.address = address;
+    }
+
+    public Customer(String s, String s1, String s2, String s3, String s4, String s5, String s6) {
     }
 
     public String getTypeOfGuest() {

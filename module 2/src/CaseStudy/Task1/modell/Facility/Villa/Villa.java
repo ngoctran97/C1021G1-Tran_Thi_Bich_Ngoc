@@ -23,6 +23,9 @@ public class Villa extends Facility {
         this.numberfloors = numberfloors;
     }
 
+//    public Villa(String datum, String datum1, String datum2, String datum3, String datum4, String datum5, String datum6, String datum7, String datum8) {
+//    }
+
     public String getRoomStandard() {
         return roomStandard;
     }

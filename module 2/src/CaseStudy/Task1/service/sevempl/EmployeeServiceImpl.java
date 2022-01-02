@@ -45,17 +45,14 @@ public class EmployeeServiceImpl implements EmployeeService {
             id++;
             //them employee vao danh dach
             employeeList.add(employee);
-
-
         }
-
         //dong file
         fstream.close();
         }
         catch  (IOException e) {
-
         }
     }
+
     public void write(){
         try {
             FileWriter fileWriter = new FileWriter("/Users/tranvantrong/Documents/C1021G1-Tran_Thi_Bich_Ngoc/module 2/src/CaseStudy/Task1/data/employee.csv");

@@ -20,8 +20,6 @@ public class Employee extends Person {
         this.wage = wage;
     }
 
-//    public Employee(int id, String name, String birth, String gender, String cmnn, String sdt, String emaile, String level, String position, int wage) {
-//    }
 
     public String getLever() {
         return lever;

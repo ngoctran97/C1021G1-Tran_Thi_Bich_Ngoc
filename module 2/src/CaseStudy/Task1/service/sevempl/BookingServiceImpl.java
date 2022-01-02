@@ -8,29 +8,54 @@ import CaseStudy.Task1.modell.Facility.Villa.Villa;
 import CaseStudy.Task1.modell.Person.Customer.Customer;
 import CaseStudy.Task1.service.BookingService;
 
+import java.io.*;
 import java.util.*;
 
 public class BookingServiceImpl implements BookingService {
+    static  int id = 1;
     Scanner scanner = new Scanner(System.in);
-    static Set<Booking> bookingSet = new TreeSet<>(new BookingComparator());
+    static TreeSet<Booking> bookingSet = new TreeSet<>() ;
     static List<Customer> customerList = new ArrayList<>();
     static Map<Facility, Integer> facilityIntegerMap = new LinkedHashMap<>();
+
     static {
-        customerList.add(new Customer("ngoc","27/05/1997","nu","123123123",
-                "098765432","ngoctran@gmail.com","VIP","GDAGFSZ"));
-        customerList.add(new Customer("hien","27/05/1999","nu","123123456",
-                "088865432","ngoctran@gmail.com","VIP","GDAGFSZ"));
-        facilityIntegerMap.put(new Villa("SVVL-1234","Tran",35,50,
+        //ReaderCustomer();
+        facilityIntegerMap.put(new Villa("SVVL-1234","Villa",35,50,
                 12,"Asdf","Afh",35,12),0);
-        facilityIntegerMap.put(new House("SVHO-1234","Thi",30,30,
+        facilityIntegerMap.put(new House("SVHO-1234","House",30,30,
                 30,"Thuong","Tdvgwgd",12),0);
-        facilityIntegerMap.put(new Room("SVRO-4444","Xiu",30,
+        facilityIntegerMap.put(new Room("SVRO-4444","Room",30,
                 45,20,"uuiyioo","ewfaef"),0);
     }
+
+    public static void ReaderCustomer(){
+        try {
+            FileReader fileReader = new FileReader(new File("/Users/tranvantrong/Documents/C1021G1-Tran_Thi_Bich_Ngoc/module 2/src/CaseStudy/Task1/data/customer.csv"));
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String Data = null;
+            while ((Data = bufferedReader.readLine()) != null){
+                String[] dataArray = Data.split(",");
+                //System.out.println(Data);
+
+                //System.out.println(dataArray[3]);
+               Customer customer = new Customer(dataArray[1],dataArray[2],dataArray[3],dataArray[4],dataArray[5],dataArray[6],dataArray[7],dataArray[8]);
+                //Customer customer = new Customer("viu","12/12/2000","nu","123123123","09753458","dfwgg@hd","fwqhdghw","gfwaedj");
+                System.out.println(customer);
+                customerList.add(customer);
+
+            }
+            bufferedReader.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void displayBooking() {
-        for (Customer customer: customerList){
-            System.out.println(customer.toString());
+        for (Booking booking: bookingSet){
+            System.out.println(booking.toString());
         }
 
 
@@ -38,27 +63,31 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public void addNewBooking() {
-        int id = 1;
+        this.ReaderCustomer();
         if (!bookingSet.isEmpty()) {
             id = bookingSet.size();
+            id++;
         }
+        System.out.println(customerList.size());
         Customer customer = chooseCustomer();
-        Facility facility = chooseCFacility();
+        Facility facility = chooseFacility();
+
         System.out.println("Nhập ngày bất đầu thuê: ");
         String starDate = scanner.nextLine();
         System.out.println("Nhập ngày trả phòng: ");
         String endDate = scanner.nextLine();
-        Booking booking = new Booking(id, starDate, endDate, customer,facility,);
+        Booking booking = new Booking(id, starDate, endDate,customer.getId(),facility.getServiceName());//customer.toString(),facility.toString());
 
         bookingSet.add(booking);
         System.out.println("Đã booking thành công.");
+        id++;
     }
 
     public static Customer chooseCustomer(){
+        Customer customerNew = new Customer();
         System.out.println("Danh sach khach hang");
         for (Customer customer : customerList){
             System.out.println(customer);
-
         }
         System.out.println("Nhap id khach hang");
         boolean check = true;
@@ -69,7 +98,7 @@ public class BookingServiceImpl implements BookingService {
             for (Customer customer : customerList) {
                 if (id == customer.getId()) {
                     check = false;
-                    return customer;
+                    customerNew = customer;
                 }
             }
             if (check) {
@@ -77,10 +106,10 @@ public class BookingServiceImpl implements BookingService {
                 id = sc.nextInt();
             }
         }
-        return null;
+         return customerNew;
 
     }
-    public static Facility chooseCFacility() {
+    public static Facility chooseFacility() {
         System.out.println("Danh sach dich vu: ");
         for (Map.Entry<Facility, Integer> entry : facilityIntegerMap.entrySet()) {
             System.out.println(entry.getKey().toString());
@@ -104,5 +133,4 @@ public class BookingServiceImpl implements BookingService {
         }
         return null;
     }
-
 }

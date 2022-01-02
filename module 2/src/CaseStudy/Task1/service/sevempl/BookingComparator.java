@@ -13,7 +13,7 @@ public class BookingComparator implements Comparator<Booking> {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/YYYY");
         LocalDate starDate1 = LocalDate.parse(o1.getStartDate(), formatter);
         LocalDate starDate2 = LocalDate.parse(o2.getStartDate(), formatter);
-        LocalDate enDate1 = LocalDate.parse(o1.getBookingId(), formatter);
+        LocalDate enDate1 = LocalDate.parse(o1.getEndDate(), formatter);
         LocalDate enDate2 = LocalDate.parse(o2.getEndDate(), formatter);
 
         if(starDate1.compareTo(starDate2) > 0){

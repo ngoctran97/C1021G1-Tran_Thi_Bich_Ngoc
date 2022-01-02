@@ -1,6 +1,7 @@
 package CaseStudy.Task1.controller;
 
 import CaseStudy.Task1.service.CustomerService;
+import CaseStudy.Task1.service.sevempl.BookingServiceImpl;
 import CaseStudy.Task1.service.sevempl.CustomerServiceImpl;
 import CaseStudy.Task1.service.sevempl.EmployeeServiceImpl;
 import CaseStudy.Task1.service.sevempl.FacilityServiceImpl;
@@ -190,6 +191,9 @@ public class FuramaController {
 
     public static void Displaylistbooking() {
         boolean cheeck = true;
+        BookingServiceImpl bookingService = new BookingServiceImpl();
+        CustomerServiceImpl customerService = new CustomerServiceImpl();
+        int choice = 0;
         while (cheeck) {
             System.out.println("---Display list booking---");
             System.out.println("1.Add new booking");
@@ -199,8 +203,19 @@ public class FuramaController {
             System.out.println("5.Edit contracts");
             System.out.println("6.Return main menu");
             Scanner scanner = new Scanner(System.in);
-            switch (scanner.nextInt()) {
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
+            }catch (NumberFormatException e){
+                System.out.println("nhap sai dinh dang vui long nhap lai");
+            }
+            switch (choice) {
                 case 1:
+                   bookingService.addNewBooking();
+                    Displaylistbooking();
+                   break;
+                case 2:
+                    bookingService.displayBooking();
+                    break;
                 case 6:
                     displayMainMenu();
                     break;
@@ -226,6 +241,8 @@ public class FuramaController {
             switch (choose) {
                 case 1:
                     displayMainMenu();
+                    break;
+                case 2:
                     break;
                 case 3:
                     check = false;
