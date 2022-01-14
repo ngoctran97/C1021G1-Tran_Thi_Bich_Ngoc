@@ -8,7 +8,7 @@ value
 ('Hong Ha',50);
 select * from Bai_Tap_2.Customer; 
 
-insert into `Order`(cID,oName,oTotalPrice)
+insert into `Order`(cID,oDate,oTotalPrice)
 value 
 (1,'2006/03/21',Null),
 (2,'2006/03/23',Null),
