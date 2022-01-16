@@ -1,3 +1,4 @@
+
 use Bai_Tap_2;
 
 select oID,oDate,oTotalPrice from `order`;
