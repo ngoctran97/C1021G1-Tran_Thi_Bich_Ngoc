@@ -1,5 +1,6 @@
 drop database caseStudy;
 create database caseStudy;
+
 use caseStudy;
 
 create table vi_tri(
@@ -147,8 +148,8 @@ foreign key(ma_khach_hang) references khach_hang(ma_khach_hang),
 foreign key(ma_dich_vu) references dich_vu(ma_dich_vu)
 );
 insert into hop_dong(ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc, ma_nhan_vien, ma_khach_hang, ma_dich_vu)
-values ("2021-12-08", "2021-12-08", 0, 3, 1, 3),
-("2021-07-14", "2021-07-21", 200000, 7, 3,1),
+values ("2020-12-08", "2020-12-08", 0, 3, 1, 3),
+("2020-07-14", "2020-07-21", 200000, 7, 3,1),
 ("2021-03-15", "2021-03-17", 50000, 3,4, 2),
 ("2021-01-14", "2021-01-18", 100000, 7, 5, 5),
 ("2021-07-14", "2021-07-15", 0, 7, 2, 6),
