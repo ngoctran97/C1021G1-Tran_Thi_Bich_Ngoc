@@ -1,0 +1,27 @@
+* {
+    max-width: 70vw;
+}
+body{
+    font-family: "Times New Roman", serif; //chỉ ra font chữ
+    font-weight: 500; // độ đậm nhạt của phông chữ
+    margin-left: 20vw; // canh lề
+
+}
+
+p {
+    text-indent: 50px; // thut le van ban
+    text-align: justify; //sắp xếp các nội dung theo chiều ngang
+}
+.bold {
+    font-weight: bold;//dùng để thiết lập việc văn bản có được "in đậm" hay không.
+}
+
+.light_blue {
+    color: #0e77c4;
+    font-weight: bold;
+}
+
+.dark_blue {
+    color: #291f8c;
+    font-weight: bold;
+}
