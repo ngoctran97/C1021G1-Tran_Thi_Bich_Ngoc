@@ -21,6 +21,7 @@ public class chiet_xuat extends HttpServlet {
         double discountPrice = List_Price - Discount_Percent;
 
         PrintWriter writer = response.getWriter();
+
         writer.println("<html>");
         writer.println("<h1>Product Description: " + productDescription + "</h1>");
         writer.println("<h1>List Price: " + List_Price + "</h1>");
