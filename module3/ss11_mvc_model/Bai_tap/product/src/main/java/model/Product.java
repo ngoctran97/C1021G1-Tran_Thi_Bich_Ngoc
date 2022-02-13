@@ -42,16 +42,16 @@ public class Product {
         this.price = price;
     }
 
-    public String getDescription(String description) {
-        return this.description;
+    public String getDescription() {
+        return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
     }
 
-    public String getProducer(String producer) {
-        return this.producer;
+    public String getProducer() {
+        return producer;
     }
 
     public void setProducer(String producer) {

@@ -16,4 +16,6 @@ public interface ProductService {
     void remove(int id);
 
     void search(String name);
+
+    List<Product> searchByName(String name);
 }

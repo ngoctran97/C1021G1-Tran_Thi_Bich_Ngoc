@@ -30,15 +30,15 @@
       </tr>
       <tr>
         <td>Price </td>
-        <td><input type="text" name="price" id="price" value="${requestScope["product"].getEmail()}"></td>
+        <td><input type="text" name="price" id="price" value="${requestScope["product"].getPrice()}"></td>
       </tr>
       <tr>
         <td>Description: </td>
-        <td><input type="text" name="description" id="description" value="${requestScope["product"].getAddress()}"></td>
+        <td><input type="text" name="description" id="description" value="${requestScope["product"].getDescription()}"></td>
       </tr>
       <tr>
         <td>Producer: </td>
-        <td><input type="text" name="producer" id="producer" value="${requestScope["product"].getAddress()}"></td>
+        <td><input type="text" name="producer" id="producer" value="${requestScope["product"].getProducer()}"></td>
       </tr>
       <tr>
         <td></td>

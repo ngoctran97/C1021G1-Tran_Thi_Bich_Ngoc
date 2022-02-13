@@ -13,7 +13,7 @@
 <body>
 <h1>Delete product</h1>
 <p>
-  <a href="/customers">Back to product list</a>
+  <a href="/products">Back to product list</a>
 </p>
 <form method="post">
   <h3>Are you sure?</h3>
