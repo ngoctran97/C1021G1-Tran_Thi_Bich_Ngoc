@@ -1,18 +1,19 @@
 package controller;
 
 import model.Product;
+import service.IProductService;
 import service.ProductService;
-import service.ProductServiceImpl;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(name = "productServlet", value = {"","/products"})
+@WebServlet(name = "productServlet", value = {"", "/products"})
 public class ProductServlet extends HttpServlet {
-    private ProductService productService = new ProductServiceImpl();
+    private IProductService productService = new ProductService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -38,19 +39,23 @@ public class ProductServlet extends HttpServlet {
                 viewproduct(request, response);
                 break;
             default:
-                listProducts(request, response);
+                try {
+                    listProducts(request, response);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
                 break;
         }
     }
 
 
 
-    private void listProducts(HttpServletRequest request, HttpServletResponse response) {
+    private void listProducts(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         List<Product> products = this.productService.findAll();
         request.setAttribute("products", products);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/product/list.jsp");
-        try {
+       try {
             dispatcher.forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
@@ -128,7 +133,7 @@ public class ProductServlet extends HttpServlet {
         }
     }
 
-    private void searchProduct(HttpServletRequest request, HttpServletResponse response) {
+    private void searchProduct(HttpServletRequest request, HttpServletResponse response){
         String name = request.getParameter("search");
         List<Product> products = productService.searchByName(name);
         request.setAttribute("products",products);

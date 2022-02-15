@@ -1,21 +1,50 @@
 package service;
 
 import model.Product;
+import reponshitory.IProductRepository;
+import reponshitory.ProductRepository;
+import reponshitory.ProductRepository;
 
+import java.sql.SQLException;
 import java.util.List;
 
-public interface ProductService {
-    List<Product> findAll();
+public class ProductService implements IProductService{
 
-    void save(Product product);
+    private static IProductRepository iProductRepository = new ProductRepository();
+    @Override
+    public List<Product> findAll() throws SQLException {
+    List<Product> productList = iProductRepository.findAll();
+    if(productList.size()==0){
+        return null;
+        }
+        return iProductRepository.findAll();
+    }
 
-    Product findAllId(int id);
+    @Override
+    public void save(Product product) {
+        iProductRepository.save(product);
 
-    void update(int id, Product product);
+    }
 
-    void remove(int id);
+    @Override
+    public Product findAllId(int id) {
+        return iProductRepository.findAllId(id);
+    }
 
-    void search(String name);
+    @Override
+    public void update(int id, Product product) {
+        iProductRepository.update(id,product);
 
-    List<Product> searchByName(String name);
+    }
+
+    @Override
+    public void remove(int id) {
+        iProductRepository.remove(id);
+
+    }
+
+    @Override
+    public List<Product> searchByName(String name) {
+        return iProductRepository.searchByName(name);
+    }
 }
