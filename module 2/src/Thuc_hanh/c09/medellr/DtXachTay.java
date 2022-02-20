@@ -1,15 +1,15 @@
 package Thuc_hanh.c09.medellr;
 
-public class dtXachTay extends Phone{
+public class DtXachTay extends Phone{
     private String quocGiaXT;
     private String trangThai;
 
-    public dtXachTay(String quocGiaXT, String trangThai) {
+    public DtXachTay(String quocGiaXT, String trangThai) {
         this.quocGiaXT = quocGiaXT;
         this.trangThai = trangThai;
     }
 
-    public dtXachTay(String name, double giaban, int soLuong, String nhaSanXuat, String quocGiaXT, String trangThai) {
+    public DtXachTay(String name, double giaban, int soLuong, String nhaSanXuat, String quocGiaXT, String trangThai) {
         super(name, giaban, soLuong, nhaSanXuat);
         this.quocGiaXT = quocGiaXT;
         this.trangThai = trangThai;
@@ -33,10 +33,6 @@ public class dtXachTay extends Phone{
 
     @Override
     public String toString() {
-        return "dtXachTay{" +
-                super.toString()+
-                "quocGiaXT='" + quocGiaXT + '\'' +
-                ", trangThai='" + trangThai + '\'' +
-                '}';
+        return super.toString() + "," + quocGiaXT + "," + trangThai;
     }
 }

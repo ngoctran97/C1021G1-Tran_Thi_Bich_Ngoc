@@ -86,6 +86,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         System.out.println("input name");
         String name = scanner.nextLine();
+
         String birth;
         do {
             System.out.println("input birth");

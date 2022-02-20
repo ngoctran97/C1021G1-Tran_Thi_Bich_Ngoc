@@ -1,6 +1,5 @@
 package Thuc_hanh.c09.controller;
 
-import Thuc_hanh.c09.service.IPhoneService;
 import Thuc_hanh.c09.service.PhoneService;
 
 import java.util.Scanner;

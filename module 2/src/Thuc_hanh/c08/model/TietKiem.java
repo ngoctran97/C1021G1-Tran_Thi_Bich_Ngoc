@@ -1,15 +1,15 @@
 package Thuc_hanh.c08.model;
 
-public class tietKiem {
+public class TietKiem {
     private double tienTietKiem;
     private String ngayGuiTietKiem;
     private double laiXuat;
     private int kiHan;
 
-    public tietKiem() {
+    public TietKiem() {
     }
 
-    public tietKiem(double tienTietKiem, String ngayGuiTietKiem, double laiXuat, int kiHan) {
+    public TietKiem(double tienTietKiem, String ngayGuiTietKiem, double laiXuat, int kiHan) {
         this.tienTietKiem = tienTietKiem;
         this.ngayGuiTietKiem = ngayGuiTietKiem;
         this.laiXuat = laiXuat;

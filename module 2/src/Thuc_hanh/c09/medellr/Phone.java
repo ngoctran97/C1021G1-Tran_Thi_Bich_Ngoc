@@ -72,13 +72,7 @@ public class Phone implements Comparable<Phone>, Comparator<Phone> {
 
     @Override
     public String toString() {
-        return "Phone{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", giaban=" + giaban +
-                ", soLuong=" + soLuong +
-                ", nhaSanXuat='" + nhaSanXuat + '\'' +
-                '}';
+        return id + "," + name + "," + giaban + "," + soLuong + "," + nhaSanXuat;
     }
 
     @Override

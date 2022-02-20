@@ -1,19 +1,70 @@
 package Thuc_hanh.c09.service;
 
-import CaseStudy.Task1.modell.Person.Employee.Employee;
 import Thuc_hanh.c09.medellr.DtChinhHang;
 import Thuc_hanh.c09.medellr.Phone;
-import Thuc_hanh.c09.medellr.dtXachTay;
+import Thuc_hanh.c09.medellr.DtXachTay;
 
+import java.io.*;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
+import java.util.Map;
 import java.util.Scanner;
 
 public class PhoneService implements IPhoneService {
     ArrayList<Phone> phoneList = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
+    static  int id = 1;
 
+    public PhoneService(){
+        readerfile();
+    }
+
+    public void readerfile(){
+        try{
+            FileInputStream filetream = new FileInputStream("src/Thuc_hanh/c09/data/phone.csv");
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(filetream));
+
+            String strLine;
+
+            while ((strLine = bufferedReader.readLine())!= null){
+                System.out.println(strLine);
+                String data[] = strLine.split(",");
+                int hanbaohanh;
+                try {
+                    hanbaohanh = Integer.parseInt(data[5]);
+                }
+                catch (Exception e) {
+                    hanbaohanh = -1;
+                }
+                Phone newphone;
+                if( hanbaohanh == -1) {
+                    newphone = new DtXachTay(data[1], Double.parseDouble(data[2]), Integer.parseInt(data[3]), data[4], data[5], data[6]);
+                }
+                else
+                    newphone = new DtChinhHang(data[1], Double.parseDouble(data[2]), Integer.parseInt(data[3]),data[4],hanbaohanh,data[6] );
+                id++;
+                phoneList.add(newphone);
+            }
+            filetream.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void writefile(){
+        try {
+            FileWriter fileWriterDtChinhHang = new FileWriter("src/Thuc_hanh/c09/data/phone.csv", false);
+            BufferedWriter bufferedWriterDtChinhHang = new BufferedWriter(fileWriterDtChinhHang);
+
+            for (Phone phone :phoneList){
+                bufferedWriterDtChinhHang.write(phone.toString()+"\n");
+            }
+            bufferedWriterDtChinhHang.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     @Override
     public void xoa() {
         System.out.println("Nhập ID muốn xoá");
@@ -41,8 +92,10 @@ public class PhoneService implements IPhoneService {
             System.out.print(x.getMessage() + " Nhan Enter de quay lai mmen chinh.");
             scanner.nextLine();
         }
+        writefile();
         xemDanhSach();
     }
+
 
     @Override
     public void xemDanhSach() {
@@ -107,9 +160,9 @@ public class PhoneService implements IPhoneService {
         System.out.println("Trạng thái điện thoại");
         String trangThai = scanner.nextLine();
 
-        Phone phone = new dtXachTay(name,giaBan, soLuong, nhasx, quocGia, trangThai);
+        Phone phone = new DtXachTay(name,giaBan, soLuong, nhasx, quocGia, trangThai);
         phoneList.add(phone);
-
+        writefile();
 
     }
 
@@ -150,5 +203,6 @@ public class PhoneService implements IPhoneService {
 
         Phone phone = new DtChinhHang(name, giaBan, soLuong, nhasx, thoiGian, baoHanh);
         phoneList.add(phone);
+        writefile();
     }
 }

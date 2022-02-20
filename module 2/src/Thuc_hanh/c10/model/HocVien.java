@@ -1,21 +1,21 @@
 package Thuc_hanh.c10.model;
 
-public class HocSinh extends Student{
+public class HocVien extends Student{
     private String lop;
     private Double diem;
 
-    public HocSinh(int id, String name, String birthday, String gender, String lop, Double diem) {
+    public HocVien(String id, String name, String birthday, String gender, String lop, Double diem) {
         super(id, name, birthday, gender);
         this.lop = lop;
         this.diem = diem;
     }
 
-    public HocSinh(String lop, Double diem) {
+    public HocVien(String lop, Double diem) {
         this.lop = lop;
         this.diem = diem;
     }
 
-    public HocSinh() {
+    public HocVien() {
     }
 
     public String getLop() {
@@ -36,10 +36,6 @@ public class HocSinh extends Student{
 
     @Override
     public String toString() {
-        return "HocSinh{" +
-                super.toString()+
-                "lop='" + lop + '\'' +
-                ", diem=" + diem +
-                '}';
+        return super.toString() + "," + lop + "," + diem;
     }
 }

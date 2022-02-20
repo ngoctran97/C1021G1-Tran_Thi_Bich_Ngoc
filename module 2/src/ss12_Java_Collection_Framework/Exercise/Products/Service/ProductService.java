@@ -51,16 +51,14 @@ public class ProductService implements IProduct {
         for (int i = 0; i < productList.size(); i++) {
             if (productList.get(i).getId() == idRemove) {
                 productList.remove(productList.get(i));
-            } else {
+                break;
+            } else{
                 System.out.println("khong co id can xoa");
             }
         }
         for (Product product : productList) {
             System.out.println(product);
-
         }
-
-
     }
 
     @Override

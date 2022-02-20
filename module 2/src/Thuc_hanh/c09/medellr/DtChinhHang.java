@@ -33,10 +33,6 @@ public class DtChinhHang extends Phone{
 
     @Override
     public String toString() {
-        return "DtChinhHang{" +
-                super.toString()+
-                "thoiGiangBH='" + thoiGiangBH + '\'' +
-                ", phamViBH='" + phamViBH + '\'' +
-                '}';
+        return super.toString() + "," + thoiGiangBH + "," + phamViBH;
     }
 }

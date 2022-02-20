@@ -1,15 +1,15 @@
 package Thuc_hanh.c08.model;
 
-public class taiKhoan {
+public class TaiKhoan {
     private int id = 1;
     private String maTaiKhoan;
     private String ten;
     private String ngayTaoTK;
 
-    public taiKhoan() {
+    public TaiKhoan() {
     }
 
-    public taiKhoan(int id, String maTaiKhoan, String ten, String ngay) {
+    public TaiKhoan(int id, String maTaiKhoan, String ten, String ngay) {
         this.id = id++;
         this.maTaiKhoan = maTaiKhoan;
         this.ten = ten;

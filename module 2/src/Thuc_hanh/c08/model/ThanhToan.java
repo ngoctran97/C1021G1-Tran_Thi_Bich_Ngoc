@@ -1,13 +1,13 @@
 package Thuc_hanh.c08.model;
 
-public class thanhToan {
+public class ThanhToan {
     private String soThe;
     private String tienTrongTK;
 
-    public thanhToan() {
+    public ThanhToan() {
     }
 
-    public thanhToan(String soThe, String tienTrongTK) {
+    public ThanhToan(String soThe, String tienTrongTK) {
         this.soThe = soThe;
         this.tienTrongTK = tienTrongTK;
     }

@@ -12,13 +12,14 @@ public class BaseRipository {
 
     public BaseRipository(){
         try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            this.connection = DriverManager.getConnection(jdbcURL, jdbcUsername,jdbcPassword);
+            Class.forName("com.mysql.jdbc.Driver");
+            connection = DriverManager.getConnection(jdbcURL, jdbcUsername,jdbcPassword);
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
     }
-    public Connection getConnection(){
+
+    public Connection getConnection() {
         return connection;
     }
 }
